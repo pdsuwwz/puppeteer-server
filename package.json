@@ -1,15 +1,13 @@
 {
   "name": "puppeteer-server",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Koa + TypeScript + Puppeteer",
-  "tags": [
-    "koa",
-    "typescript",
-    "puppeteer",
-    "pm2",
-    "nodemon",
-    "eslint"
-  ],
+  "license": "MIT",
+  "author": "Wisdom <pdsu.wwz@foxmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdsuwwz/puppeteer-server.git"
+  },
   "scripts": {
     "dev": "nodemon",
     "build": "rm -rf dist && tsc",
@@ -37,5 +35,13 @@
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.3.4"
-  }
+  },
+  "tags": [
+    "koa",
+    "typescript",
+    "puppeteer",
+    "pm2",
+    "nodemon",
+    "eslint"
+  ]
 }
