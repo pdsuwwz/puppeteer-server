@@ -1,6 +1,6 @@
 # Puppeteer Server
 
-| Koa + TypeScript + Puppeteer
+> Koa + TypeScript + Puppeteer
 
 ## Project structure
 
