@@ -15,8 +15,10 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
-    }
+      "@/*": [
+        "src/*"
+      ]
+    },
   },
   "exclude": ["node_modules"]
   // "include": ["ormconfig.json"]
