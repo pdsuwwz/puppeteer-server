@@ -35,7 +35,13 @@ export default {
   plugins: [
     nodeResolve(),
     json(),
-    ts(),
+    ts({
+      tsconfigOverride: {
+        compilerOptions: {
+          module: 'esnext'
+        }
+      }
+    }),
     commonjs({ extensions: ['.js', '.ts'] })
   ]
 }

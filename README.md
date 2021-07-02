@@ -1,6 +1,6 @@
 # Puppeteer Server
 
-> Koa + TypeScript + Puppeteer
+> Koa + TypeScript + Rollup + Puppeteer
 
 ## Project structure
 
@@ -8,13 +8,15 @@
 ```
 .
 ├── src
+│   ├── config.ts
 │   ├── controllers
-│   ├── services
+│   ├── main.ts
 │   ├── routes.ts
-│   └── index.ts        // entry
-├── ecosystem.config.js // pm2 configuration
-├── nodemon.json        // nodemon configuration
+│   └── services
+├── ecosystem.config.js
+├── nodemon.json
 ├── package.json
+├── rollup.config.ts
 └── tsconfig.json
 ```
 
