@@ -10,13 +10,15 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "build": "rm -rf dist && tsc && tsc-alias",
+    "clean:dist": "rm -rf ./dist",
+    "build": "yarn clean:dist && rollup -c",
+    "lint": "eslint . --ext .js,.ts --fix",
+    "tsbuild": "yarn clean:dist && tsc && tsc-alias",
     "start": "pm2 start ecosystem.config.js --env production",
     "restart": "pm2 restart ecosystem.config.js --env production",
     "stop": "pm2 stop ecosystem.config.js",
     "delete": "pm2 delete ecosystem.config.js",
-    "wc": "pm2 list",
-    "lint": "eslint . --ext .js,.ts --fix"
+    "wc": "pm2 list"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
@@ -26,6 +28,9 @@
     "puppeteer": "^10.1.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@types/koa": "^2.13.3",
     "@types/koa-bodyparser": "^4.3.1",
     "@types/koa-router": "^7.4.2",
@@ -35,10 +40,13 @@
     "eslint": "^7.29.0",
     "nodemon": "^2.0.7",
     "pm2": "^5.1.0",
+    "rollup": "^2.52.7",
+    "rollup-plugin-typescript2": "^0.30.0",
     "ts-node": "^10.0.0",
     "tsc-alias": "^1.3.5",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.3.4"
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5"
   },
   "tags": [
     "koa",
@@ -46,6 +54,7 @@
     "puppeteer",
     "pm2",
     "nodemon",
-    "eslint"
+    "eslint",
+    "rollup"
   ]
 }
