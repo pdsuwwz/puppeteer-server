@@ -23,6 +23,9 @@
       ]
     },
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "rollup.config.ts"
+  ]
   // "include": ["ormconfig.json"]
 }
