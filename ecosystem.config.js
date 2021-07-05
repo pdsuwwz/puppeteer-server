@@ -5,7 +5,7 @@ module.exports = {
   apps: [
     {
       name,
-      script: path.resolve(__dirname, './dist/main.js'),
+      script: path.resolve(__dirname, './dist/bundle.cjs.js'),
       instances: require('os').cpus().length,
       autorestart: true,
       watch: true,
