@@ -85,9 +85,11 @@ export default class GeneratePdfService {
     page.addStyleTag({
       content: `
         @media print {
-          #maincontent > div:nth-child(5) {
-            page-break-before: always;
-          }
+          /*
+            .xxx-class {
+              page-break-before: always;
+            }
+          */
         }
       `
     })
