@@ -3,6 +3,7 @@ import Router from 'koa-router'
 import bodyParser from 'koa-bodyparser'
 import { PORT } from '@/config'
 import routes from '@/routes'
+import { getLocalAddress } from '@/utils'
 
 const app: Koa = new Koa()
 const router: Router = new Router()
@@ -21,4 +22,11 @@ app.use(router.routes())
 app.use(router.allowedMethods())
 app.listen(PORT)
 
-console.log(`🚀 Listening on: http://localhost:${PORT}`)
+
+const address = getLocalAddress()
+const blank1 = ''.padStart(1)
+const blank2 = ''.padStart(2)
+
+console.log('\n', blank1, '🚀 Puppeteer Server\n')
+console.log(blank2, `> Local: http://localhost:${PORT}`)
+console.log(blank2, `> Network: http://${address.en0[0]}:${PORT}\n`)

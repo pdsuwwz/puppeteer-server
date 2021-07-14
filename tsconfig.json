@@ -15,8 +15,8 @@
     "sourceMap": false,
     "outDir": "./dist",
     "baseUrl": "./",
-    // "lib": ["dom", "ES2020"],
-    // "types": ["puppeteer", "node"],
+    "lib": ["dom", "ES2020"],
+    "types": ["puppeteer", "node"],
     "paths": {
       "@/*": [
         "src/*"
