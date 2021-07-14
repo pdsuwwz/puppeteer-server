@@ -6,6 +6,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
+    // "noEmit": true,
+    "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "removeComments": true,
@@ -28,5 +30,4 @@
     "node_modules",
     "rollup.config.ts"
   ]
-  // "include": ["ormconfig.json"]
 }
