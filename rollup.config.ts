@@ -1,20 +1,33 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
+import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 import ts from 'rollup-plugin-typescript2'
 import json from '@rollup/plugin-json'
-
+import commonjs from '@rollup/plugin-commonjs'
 import path from 'path'
+
+const { getPresetsEnv } = require('./babel.presets')
 const pkg = require(path.resolve('package.json'))
 
 const formats = [
   'cjs',
   'esm'
 ]
-const output = formats.map((format) => ({
-  file: `dist/bundle.${format}.js`,
-  format,
-  sourcemap: false
-}))
+const output = formats.map((format) => {
+  const fileName = `bundle.${format}.js`
+  return {
+    file: `dist/${fileName}`,
+    format,
+    banner: `
+      /**
+       * @license
+       * author: ${pkg.author}
+       * ${fileName} v${pkg.version}
+       * Released under the ${pkg.license} license.
+       */
+    `,
+    sourcemap: false
+  }
+})
 
 export default {
   input: 'src/main.ts',
@@ -25,6 +38,11 @@ export default {
     ...['path', 'url', 'os', 'stream']
   ],
   plugins: [
+    getBabelOutputPlugin({
+      presets: [
+        getPresetsEnv(false)
+      ]
+    }),
     nodeResolve(),
     json(),
     ts({
@@ -34,6 +52,8 @@ export default {
         }
       }
     }),
-    commonjs({ extensions: ['.js', '.ts'] })
+    commonjs({
+      extensions: ['.js', '.ts']
+    })
   ]
 }
