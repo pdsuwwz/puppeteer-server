@@ -18,6 +18,8 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 
 - Fast build with Rollup.
 
+- Extensible PDF watermark, header and footer.
+
 - HMR.
 
 ## Project structure
