@@ -8,19 +8,11 @@ const pkg = require(path.resolve('package.json'))
 
 const formats = [
   'cjs',
-  'umd',
   'esm'
 ]
 const output = formats.map((format) => ({
   file: `dist/bundle.${format}.js`,
   format,
-  globals: {
-    'koa': 'Koa',
-    'koa-router': 'Router',
-    'koa-bodyparser': 'bodyParser',
-    'dotenv': 'dotenv',
-    'puppeteer': 'puppeteer'
-  },
   sourcemap: false
 }))
 
@@ -30,7 +22,7 @@ export default {
   external: [
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
-    ...['path', 'url', 'stream']
+    ...['path', 'url', 'os', 'stream']
   ],
   plugins: [
     nodeResolve(),
