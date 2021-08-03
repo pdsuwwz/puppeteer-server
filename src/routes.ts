@@ -1,10 +1,11 @@
 import homeController from '@/controllers/home'
 import GenerateImageController from '@/controllers/generate-image'
 import GeneratePdfController from '@/controllers/generate-pdf'
+import GenerateSamplePdfController from '@/controllers/generate-sample-pdf'
 
 interface routeConfig {
   path: string
-  method: string
+  method: 'get' | 'post' | 'delete' | 'put'
   action: unknown
 }
 
@@ -21,8 +22,13 @@ const routes: Array<routeConfig> = [
   },
   {
     path: '/pdf',
-    method: 'get',
+    method: 'post',
     action: GeneratePdfController.generate
+  },
+  {
+    path: '/sample-pdf',
+    method: 'get',
+    action: GenerateSamplePdfController.generate
   }
 ]
 export default routes

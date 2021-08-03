@@ -1,18 +1,23 @@
 import Koa from 'koa'
 import puppeteer from 'puppeteer'
 
-export interface RouterQuery {
-  url?: string
-}
 
 /**
- * @example http://localhost:3000/pdf?url=https://www.google.com
+ * @example
+
+curl --location --request POST 'http://localhost:5000/pdf' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'url=http://xxxx-auth.com' \
+--data-urlencode 'cookies[0].name=token' \
+--data-urlencode 'cookies[0].value=9s2d4c16-f072-16eg-b134-0642ap190006' \
+--data-urlencode 'cookies[0].domain=xxxx-auth.com'
+
  */
 
 export default class GeneratePdfService {
   generate = async (ctx: Koa.Context): Promise<unknown> => {
-    // https://stackoverflow.com/a/39672914/13202554
-    const { url }: RouterQuery = ctx.query
+    const { url, cookies }: any = ctx.request.body
+    console.log(ctx)
 
     if (!url) {
       ctx.status = 404
@@ -22,6 +27,9 @@ export default class GeneratePdfService {
     }
 
     const browser = await puppeteer.launch({
+      dumpio: true,
+      defaultViewport: null,
+      ignoreHTTPSErrors: true,
       args: [
         '--disable-web-security'
       ]
@@ -33,13 +41,14 @@ export default class GeneratePdfService {
     await page.setDefaultNavigationTimeout(100000)
 
     page.setExtraHTTPHeaders({
-      // 放置额外的 http header
+      // ...
     })
+
+    await page.setCookie(...cookies)
 
     await page.goto(encodeURI(url), {
-      waitUntil: 'load'
+      waitUntil: 'networkidle2'
     })
-
 
     // Get the "viewport" of the page, as reported by the page.
     await page.evaluate(async () => {
@@ -53,7 +62,6 @@ export default class GeneratePdfService {
           img.src = src
         })
       }
-
       // Watermark Image
       const src = 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b'
 
@@ -130,9 +138,7 @@ export default class GeneratePdfService {
         </div>
     </div>`
 
-
-
-    return await page.pdf({
+    const buffer = await page.pdf({
       format: 'a4',
       displayHeaderFooter: true,
       headerTemplate,
@@ -143,5 +149,7 @@ export default class GeneratePdfService {
         bottom: 80
       }
     })
+    page.close()
+    return buffer
   }
 }
