@@ -17,6 +17,8 @@ export default class GenerateImageService {
     const browser = await puppeteer.launch({
       args: [
         '--disable-extensions',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
         '--disable-web-security'
       ]
     })
@@ -24,7 +26,7 @@ export default class GenerateImageService {
     const page = await browser.newPage()
 
     await page.goto(ctx.query.url as string, {
-      waitUntil: 'networkidle0'
+      waitUntil: 'networkidle2'
     })
 
     return await page.screenshot({

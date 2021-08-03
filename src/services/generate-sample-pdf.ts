@@ -28,6 +28,8 @@ export default class GenerateSamplePdfService {
       ignoreHTTPSErrors: true,
       args: [
         '--disable-extensions',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
         '--disable-web-security'
       ]
     })

@@ -7,10 +7,10 @@ import puppeteer from 'puppeteer'
 
 curl --location --request POST 'http://localhost:5000/pdf' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'url=http://xxxx-auth.com' \
+--data-urlencode 'url=http://www.google.com' \
 --data-urlencode 'cookies[0].name=token' \
 --data-urlencode 'cookies[0].value=9s2d4c16-f072-16eg-b134-0642ap190006' \
---data-urlencode 'cookies[0].domain=xxxx-auth.com'
+--data-urlencode 'cookies[0].domain=www.google.com' --output pdf-gen.pdf
 
  */
 
@@ -31,6 +31,9 @@ export default class GeneratePdfService {
       defaultViewport: null,
       ignoreHTTPSErrors: true,
       args: [
+        '--disable-extensions',
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
         '--disable-web-security'
       ]
     })
