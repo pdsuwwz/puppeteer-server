@@ -60,7 +60,9 @@ yarn start
 Generate screenshot.
 
 ```bash
-curl --location --request GET 'http://localhost:5000/image?url=https://www.baidu.com' --output test-image.png
+curl --location --request GET \
+'http://localhost:5000/image?url=https://www.baidu.com' \
+--output test-image.png
 ```
 
 * `GET /sample-pdf`
@@ -68,7 +70,9 @@ curl --location --request GET 'http://localhost:5000/image?url=https://www.baidu
 Generate pdf.
 
 ```bash
-curl --location --request GET 'http://localhost:5000/sample-pdf?url=https://www.google.com/' --output test-sample-pdf.pdf
+curl --location --request GET \
+'http://localhost:5000/sample-pdf?url=https://www.google.com/' \
+--output test-sample-pdf.pdf
 ```
 
 * `POST /pdf`
