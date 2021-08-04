@@ -40,7 +40,7 @@ export default class GenerateSamplePdfService {
     await page.setDefaultNavigationTimeout(100000)
 
     await page.goto(encodeURI(url), {
-      waitUntil: 'load'
+      waitUntil: 'networkidle2'
     })
 
     const buffer = await page.pdf({
