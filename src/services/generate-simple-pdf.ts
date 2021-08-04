@@ -7,10 +7,15 @@ export interface RouterQuery {
 
 
 /**
- * @example http://localhost:5000/sample-pdf?url=https://www.google.com
+ * @example
+
+curl --location --request GET \
+'http://localhost:5000/simple-pdf?url=https://www.google.com/' \
+--output test-simple-pdf.pdf
+
  */
 
-export default class GenerateSamplePdfService {
+export default class GenerateSimplePdfService {
   generate = async (ctx: Koa.Context): Promise<unknown> => {
     // https://stackoverflow.com/a/39672914/13202554
     const { url }: RouterQuery = ctx.query

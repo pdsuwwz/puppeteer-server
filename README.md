@@ -65,14 +65,14 @@ curl --location --request GET \
 --output test-image.png
 ```
 
-* `GET /sample-pdf`
+* `GET /simple-pdf`
 
 Generate pdf.
 
 ```bash
 curl --location --request GET \
-'http://localhost:5000/sample-pdf?url=https://www.google.com/' \
---output test-sample-pdf.pdf
+'http://localhost:5000/simple-pdf?url=https://www.google.com/' \
+--output test-simple-pdf.pdf
 ```
 
 * `POST /pdf`

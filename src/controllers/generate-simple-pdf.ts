@@ -1,8 +1,8 @@
 import Koa from 'koa'
-import GenerateSamplePdfService from '@/services/generate-sample-pdf'
+import GenerateSimplePdfService from '@/services/generate-simple-pdf'
 
-class GenerateSamplePdfController {
-  private service: GenerateSamplePdfService = new GenerateSamplePdfService();
+class GenerateSimplePdfController {
+  private service: GenerateSimplePdfService = new GenerateSimplePdfService();
 
   generate = async (ctx: Koa.Context) => {
     const pdf = await this.service.generate(ctx)
@@ -14,4 +14,4 @@ class GenerateSamplePdfController {
   };
 }
 
-export default new GenerateSamplePdfController()
+export default new GenerateSimplePdfController()
