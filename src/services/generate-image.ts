@@ -2,7 +2,12 @@ import Koa from 'koa'
 import puppeteer from 'puppeteer'
 
 /**
- * @example http://localhost:5000/image?url=https://www.google.com
+ * @example
+
+curl --location --request GET \
+'http://localhost:5000/image?url=https://www.baidu.com' \
+--output test-image.png
+
  */
 
 export default class GenerateImageService {
