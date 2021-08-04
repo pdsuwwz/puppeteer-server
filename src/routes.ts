@@ -5,7 +5,7 @@ import GenerateSamplePdfController from '@/controllers/generate-sample-pdf'
 
 interface routeConfig {
   path: string
-  method: 'get' | 'post' | 'delete' | 'put'
+  method: string | 'get' | 'post' | 'delete' | 'put'
   action: unknown
 }
 

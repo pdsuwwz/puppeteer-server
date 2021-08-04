@@ -1,6 +1,17 @@
 import Koa from 'koa'
 import puppeteer from 'puppeteer'
 
+export type Cookies = {
+  name: string
+  value: string
+  domain: string
+}
+
+export interface RequestBody {
+  /** description... */
+  url?: string
+  cookies?: Array<Cookies>
+}
 
 /**
  * @example
@@ -16,8 +27,7 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 export default class GeneratePdfService {
   generate = async (ctx: Koa.Context): Promise<unknown> => {
-    const { url, cookies }: any = ctx.request.body
-    console.log(ctx)
+    const { url, cookies }: RequestBody = ctx.request.body
 
     if (!url) {
       ctx.status = 404
