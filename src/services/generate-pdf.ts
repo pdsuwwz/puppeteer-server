@@ -2,12 +2,13 @@ import Koa from 'koa'
 import puppeteer from 'puppeteer'
 
 export type Cookies = {
-  name: string //
+  name: string
   value: string
   domain: string
 }
 
 export interface RequestBody {
+  /** description... */
   url?: string
   cookies?: Array<Cookies>
 }
