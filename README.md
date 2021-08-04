@@ -53,6 +53,38 @@ The project has built-in a `pm2`, running the `yarn start` will automatically ma
 yarn start
 ```
 
+## API
+
+* `GET /image`
+
+Generate screenshot.
+
+```bash
+curl --location --request GET 'http://localhost:5000/image?url=https://www.baidu.com' --output test-image.png
+```
+
+* `GET /sample-pdf`
+
+Generate pdf.
+
+```bash
+curl --location --request GET 'http://localhost:5000/sample-pdf?url=https://www.google.com/' --output test-sample-pdf.pdf
+```
+
+* `POST /pdf`
+
+Generate pdf with elements such as headers and footers.
+
+```bash
+curl --location --request POST 'http://localhost:5000/pdf' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'url=http://www.google.com' \
+--data-urlencode 'cookies[0].name=token' \
+--data-urlencode 'cookies[0].value=9s2d4c16-f072-16eg-b134-0642ap190006' \
+--data-urlencode 'cookies[0].domain=www.google.com' --output test-complex-pdf.pdf
+```
+
+
 ## Routing
 
 In order to make the routing information more readable and transparent, the form of configuration is adopted here.
@@ -70,6 +102,6 @@ const routes: Array<routeConfig> = [
 ]
 ```
 
-## License
+# License
 
 [MIT](LICENSE)
