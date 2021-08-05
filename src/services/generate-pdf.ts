@@ -1,5 +1,27 @@
 import Koa from 'koa'
 import puppeteer from 'puppeteer'
+import fs from 'fs'
+import path from 'path'
+
+const attachmentImage = fs.readFileSync(
+  path.resolve(
+    process.cwd(),
+    'static/google-logo.png'
+  ),
+  {
+    encoding: 'base64'
+  }
+)
+
+const watermarkImage = fs.readFileSync(
+  path.resolve(
+    process.cwd(),
+    'static/cover-watermark.png'
+  ),
+  {
+    encoding: 'base64'
+  }
+)
 
 export type Cookies = {
   name: string
@@ -64,7 +86,7 @@ export default class GeneratePdfService {
     })
 
     // Get the "viewport" of the page, as reported by the page.
-    await page.evaluate(async () => {
+    await page.evaluate(async ({ watermarkImage }) => {
 
       const waitImage = (src: string) => {
         return new Promise((resolve) => {
@@ -76,18 +98,20 @@ export default class GeneratePdfService {
         })
       }
       // Watermark Image
-      const src = 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b'
+      // const src = 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b'
+      const src = `data:image/png;base64,${watermarkImage}`
 
       const image = document.createElement('img')
       image.style.cssText = `
         position: fixed;
-        width: 90%;
+        width: 100%;
+        height: 100%;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
-        opacity: 0.5;
+        opacity: 1;
         user-select: none;
         pointer-events: none;
         z-index: 100000;
@@ -100,7 +124,7 @@ export default class GeneratePdfService {
       return {
 
       }
-    })
+    }, { watermarkImage })
 
     // Css for print mode
     page.addStyleTag({
@@ -115,40 +139,59 @@ export default class GeneratePdfService {
       `
     })
 
-    const headerTemplate = `<div
+    const pptrStyleTag = `
+      <style>
+        .pptr-server-attachment__logo {
+          position: relative;
+          height: 21px;
+          content: url("data:image/png;base64,${attachmentImage}");
+        }
+      </style>
+    `
+
+    const headerTemplate = `
+    ${pptrStyleTag}
+    <div
     style="
-      width:90%;
-      margin:0 auto;
-      font-size:12px;
+      width: 100%;
+      margin: 0 60px;
+      font-size: 8px;
+      font-family: PingFangSC-Regular, PingFang SC;
       border-bottom:1px solid #ddd;
-      padding:10px 0;
+      padding-bottom: 4px;
+      backgroud-color: #fff;
       display: flex;
+      align-items: center;
       justify-content: space-between;
     ">
       <div>Page Header</div>
-      <div>
-          <span>Page number for header：</span>
-          <span class="pageNumber"></span> /
-          <span class="totalPages"></span>
-        </div>
+      <div style="display: flex; align-items: center;">
+        <span class="pptr-server-attachment__logo"></span>
+      </div>
     </div>`
 
-    const footerTemplate = `<div 
-      style="
-        width:90%;
-        margin:0 auto;
-        font-size:12px;
-        border-top:1px solid #ddd;
-        padding:10px 0;
-        display: flex;
-        justify-content: space-between;
-      ">
-        <div style="">Page Footer</div>
-        <div>
-          <span>Page number for footer：</span>
-          <span class="pageNumber"></span> /
-          <span class="totalPages"></span>
-        </div>
+    const footerTemplate = `
+    ${pptrStyleTag}
+    <div
+    style="
+      width: 100%;
+      margin:0 60px;
+      font-size: 8px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      border-top:1px solid #ddd;
+      padding-top: 4px;
+      backgroud-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    ">
+      <div style="">Page Footer</div>
+      <div style="display: flex; align-items: center;">
+        <span class="pptr-server-attachment__logo"></span>
+        <span>Page number for footer：</span>
+        <span class="pageNumber"></span> /
+        <span class="totalPages"></span>
+      </div>
     </div>`
 
     const buffer = await page.pdf({
@@ -158,8 +201,10 @@ export default class GeneratePdfService {
       printBackground: true,
       footerTemplate,
       margin: {
-        top: 80,
-        bottom: 80
+        top: 70,
+        left: 82,
+        right: 82,
+        bottom: 70
       }
     })
     page.close()

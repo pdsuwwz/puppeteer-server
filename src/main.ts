@@ -1,5 +1,6 @@
 import Koa from 'koa'
 import Router from 'koa-router'
+import KoaStatic from 'koa-static'
 import bodyParser from 'koa-bodyparser'
 import { PORT } from '@/config'
 import routes from '@/routes'
@@ -7,6 +8,7 @@ import { getLocalAddress } from '@/utils'
 
 const app: Koa = new Koa()
 const router: Router = new Router()
+
 
 // routes
 routes.forEach((route) => {
@@ -20,6 +22,7 @@ routes.forEach((route) => {
 app.use(bodyParser())
 app.use(router.routes())
 app.use(router.allowedMethods())
+app.use(KoaStatic(`${process.cwd()}/static`))
 app.listen(PORT)
 
 
