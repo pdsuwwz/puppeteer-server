@@ -1,6 +1,7 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import bodyParser from 'koa-bodyparser'
+import Cors from '@koa/cors'
 import { PORT } from '@/config'
 import routes from '@/routes'
 import { getLocalAddress } from '@/utils'
@@ -18,6 +19,7 @@ routes.forEach((route) => {
   router[route.method](...params)
 })
 
+app.use(Cors())
 app.use(bodyParser())
 app.use(router.routes())
 app.use(router.allowedMethods())
