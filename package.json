@@ -28,6 +28,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
+    "@koa/cors": "^3.1.0",
     "dotenv": "^10.0.0",
     "koa": "^2.13.1",
     "koa-bodyparser": "4.3.0",
@@ -46,6 +47,7 @@
     "@types/koa": "^2.13.3",
     "@types/koa-bodyparser": "4.3.0",
     "@types/koa-router": "^7.4.2",
+    "@types/koa__cors": "^3.0.3",
     "@types/node": "^15.12.5",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
