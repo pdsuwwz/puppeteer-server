@@ -33,6 +33,7 @@ export interface RequestBody {
   /** description... */
   url?: string
   cookies?: Array<Cookies>
+  hasMargin?: boolean | true
 }
 
 /**
@@ -49,7 +50,11 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 export default class GeneratePdfService {
   generate = async (ctx: Koa.Context): Promise<unknown> => {
-    const { url, cookies }: RequestBody = ctx.request.body
+    const {
+      url,
+      cookies,
+      hasMargin
+    }: RequestBody = ctx.request.body
 
     if (!url) {
       ctx.status = 404
@@ -194,18 +199,23 @@ export default class GeneratePdfService {
       </div>
     </div>`
 
-    const buffer = await page.pdf({
-      format: 'a4',
-      displayHeaderFooter: true,
-      headerTemplate,
-      printBackground: true,
-      footerTemplate,
-      margin: {
+    const extraProps = {}
+    if (hasMargin) {
+      extraProps['displayHeaderFooter'] = true
+      extraProps['headerTemplate'] = headerTemplate
+      extraProps['footerTemplate'] = footerTemplate
+      extraProps['margin'] = {
         top: 70,
         left: 82,
         right: 82,
         bottom: 70
       }
+    }
+
+    const buffer = await page.pdf({
+      format: 'a4',
+      printBackground: true,
+      ...extraProps
     })
     page.close()
     return buffer
