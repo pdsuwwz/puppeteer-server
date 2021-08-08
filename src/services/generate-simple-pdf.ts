@@ -1,10 +1,5 @@
-import Koa from 'koa'
 import puppeteer from 'puppeteer'
-
-export interface RouterQuery {
-  url?: string
-}
-
+import { RouterQuery } from '@/controllers/generate-simple-pdf'
 
 /**
  * @example
@@ -16,16 +11,9 @@ curl --location --request GET \
  */
 
 export default class GenerateSimplePdfService {
-  generate = async (ctx: Koa.Context): Promise<unknown> => {
-    // https://stackoverflow.com/a/39672914/13202554
-    const { url }: RouterQuery = ctx.query
+  generate = async (params: RouterQuery): Promise<unknown> => {
 
-    if (!url) {
-      ctx.status = 404
-      return {
-        status: 'NOT-FOUND'
-      }
-    }
+    const { url } = params
 
     const browser = await puppeteer.launch({
       dumpio: true,
