@@ -1,7 +1,8 @@
-import Koa from 'koa'
 import puppeteer from 'puppeteer'
 import fs from 'fs'
 import path from 'path'
+
+import { RequestBody } from '@/controllers/generate-pdf'
 
 const attachmentImage = fs.readFileSync(
   path.resolve(
@@ -23,19 +24,6 @@ const watermarkImage = fs.readFileSync(
   }
 )
 
-export type Cookies = {
-  name: string
-  value: string
-  domain: string
-}
-
-export interface RequestBody {
-  /** description... */
-  url?: string
-  cookies?: Array<Cookies>
-  hasMargin?: boolean | true
-}
-
 /**
  * @example
 
@@ -49,19 +37,12 @@ curl --location --request POST 'http://localhost:5000/pdf' \
  */
 
 export default class GeneratePdfService {
-  generate = async (ctx: Koa.Context): Promise<unknown> => {
+  generate = async (params: RequestBody): Promise<unknown> => {
     const {
       url,
       cookies,
       hasMargin
-    }: RequestBody = ctx.request.body
-
-    if (!url) {
-      ctx.status = 404
-      return {
-        status: 'NOT-FOUND'
-      }
-    }
+    } = params
 
     const browser = await puppeteer.launch({
       dumpio: true,
