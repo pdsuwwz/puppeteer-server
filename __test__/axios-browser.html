@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+  <script>
+    const service = axios.create({
+      baseURL: 'http://localhost:5000',
+      timeout: 60000
+    });
+    const pdfList = [
+      {
+        url: 'https://github.com/pdsuwwz',
+      },
+      {
+        url: 'https://vuejs.org/v2/api/',
+      }
+    ]
+    service({
+      method: 'post',
+      url: '/combine-pdf',
+      responseType: 'blob',
+      data: {
+        pdfList
+      }
+    }).then((res) => {
+      const url = window.URL.createObjectURL(res.data)
+    
+      const link = document.createElement('a')
+      link.style.display = 'none'
+      link.href = url
+      link.download = 'combine-test.pdf'
+
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    })
+  </script>
+</body>
+</html>
+

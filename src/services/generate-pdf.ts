@@ -37,11 +37,11 @@ curl --location --request POST 'http://localhost:5000/pdf' \
  */
 
 export default class GeneratePdfService {
-  generate = async (params: RequestBody): Promise<unknown> => {
+  generate = async (params: RequestBody): Promise<Buffer> => {
     const {
       url,
-      cookies,
-      hasMargin
+      cookies = [],
+      hasMargin = true
     } = params
 
     const browser = await puppeteer.launch({
