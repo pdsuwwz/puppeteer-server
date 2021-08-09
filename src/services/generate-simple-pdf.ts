@@ -11,7 +11,7 @@ curl --location --request GET \
  */
 
 export default class GenerateSimplePdfService {
-  generate = async (params: RouterQuery): Promise<unknown> => {
+  generate = async (params: RouterQuery): Promise<Buffer> => {
 
     const { url } = params
 

@@ -17,7 +17,6 @@
     "clean:dist": "rm -rf ./dist",
     "build": "yarn clean:dist && rollup -c",
     "tsbuild": "yarn clean:dist && tsc && tsc-alias",
-    "prestart": "yarn build",
     "start": "pm2 start ecosystem.config.js --env production",
     "restart": "pm2 restart ecosystem.config.js --env production",
     "stop": "pm2 stop ecosystem.config.js",
@@ -33,6 +32,7 @@
     "koa": "^2.13.1",
     "koa-bodyparser": "4.3.0",
     "koa-router": "^10.0.0",
+    "pdf-lib": "^1.16.0",
     "puppeteer": "^10.1.0"
   },
   "devDependencies": {
@@ -51,6 +51,7 @@
     "@types/node": "^15.12.5",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
+    "axios": "^0.21.1",
     "babel-plugin-module-resolver": "^4.1.0",
     "conventional-changelog-cli": "^2.1.1",
     "eslint": "^7.29.0",

@@ -11,7 +11,7 @@ export interface RequestBody {
   /** description... */
   url?: string
   cookies?: Array<Cookies>
-  hasMargin?: boolean | true
+  hasMargin?: boolean
 }
 
 class GeneratePdfController {

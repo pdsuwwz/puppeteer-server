@@ -1,3 +1,7 @@
+import {
+  PDFDocument,
+  PDFPage
+} from 'pdf-lib'
 
 /**
  * @example
@@ -9,18 +13,22 @@ curl --location --request GET \
  */
 
 export default class GenerateCombinePdfService {
-  // generate = async (p1:any, p2:any): Promise<unknown> => {
-  //   // console.log(combineList)
+  generate = async (...combineList: Promise<Uint8Array>[]): Promise<Buffer> => {
+    const mergedPdf = await PDFDocument.create()
 
-  //   // const { url } = combineList
+    const pdfsToMerge: Uint8Array[] = await Promise.all(combineList)
 
-  //   return {}
-  // }
-  generate = async (...combineList: Promise<unknown>[]): Promise<unknown> => {
-    console.log('combineList', combineList)
+    for await (const pdfBytes of pdfsToMerge) {
+      const pdf = await PDFDocument.load(pdfBytes)
+      const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices())
 
-    // const { url } = combineList
+      copiedPages.forEach((page: PDFPage) => {
+        mergedPdf.addPage(page)
+      })
+    }
 
-    return {}
+    const buffer = await mergedPdf.save()
+
+    return Buffer.from(buffer)
   }
 }

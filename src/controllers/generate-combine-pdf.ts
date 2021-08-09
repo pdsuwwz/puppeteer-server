@@ -27,9 +27,11 @@ class GenerateCombinePdfController {
       return
     }
 
+
     const pdfPromises = pdfList.map((pdfItem) => {
       return this.pdfService.generate(pdfItem)
     })
+
     const totalPdf = await this.service.generate(
       ...pdfPromises
     )
@@ -38,7 +40,6 @@ class GenerateCombinePdfController {
       ctx.type = 'application/pdf'
     }
     ctx.body = totalPdf
-    return
   };
 }
 

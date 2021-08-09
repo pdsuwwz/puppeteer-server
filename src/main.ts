@@ -27,9 +27,11 @@ app.listen(PORT)
 
 
 const address = getLocalAddress()
+const localhost = address[Object.keys(address)[0]]?.[0]
+
 const blank1 = ''.padStart(1)
 const blank2 = ''.padStart(2)
 
 console.log('\n', blank1, '🚀 Puppeteer Server\n')
 console.log(blank2, `> Local: http://localhost:${PORT}`)
-console.log(blank2, `> Network: http://${address.en0[0]}:${PORT}\n`)
+console.log(blank2, `> Network: http://${localhost}:${PORT}\n`)
