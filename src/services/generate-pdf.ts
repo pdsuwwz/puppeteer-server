@@ -23,6 +23,15 @@ const watermarkImage = fs.readFileSync(
     encoding: 'base64'
   }
 )
+const watermarkImageFull = fs.readFileSync(
+  path.resolve(
+    process.cwd(),
+    'static/cover-watermark-full.png'
+  ),
+  {
+    encoding: 'base64'
+  }
+)
 
 /**
  * @example
@@ -110,7 +119,11 @@ export default class GeneratePdfService {
       return {
 
       }
-    }, { watermarkImage })
+    }, {
+      watermarkImage: hasMargin
+        ? watermarkImage
+        : watermarkImageFull
+    })
 
     // Css for print mode
     page.addStyleTag({
