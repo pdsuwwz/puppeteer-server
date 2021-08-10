@@ -10,7 +10,7 @@ class GenerateCombinePdfController {
 
   generate = async (ctx: Koa.Context) => {
     let {
-      pdfList
+      pdfList = []
     }: {
       pdfList: RequestBody[]
     } = ctx.request.body
