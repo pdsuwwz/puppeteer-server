@@ -7,11 +7,17 @@ export type Cookies = {
   domain: string
 }
 
+export type Attachment = {
+  header: string
+  footer: string
+}
+
 export interface RequestBody {
   /** description... */
   url?: string
   cookies?: Array<Cookies>
   hasMargin?: boolean
+  attachment?: Attachment
 }
 
 class GeneratePdfController {

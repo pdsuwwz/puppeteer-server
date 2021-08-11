@@ -50,7 +50,11 @@ export default class GeneratePdfService {
     const {
       url,
       cookies = [],
-      hasMargin = true
+      hasMargin = true,
+      attachment = {
+        header: 'Page Header',
+        footer: 'Page Footer'
+      }
     } = params
 
     const browser = await puppeteer.launch({
@@ -154,7 +158,8 @@ export default class GeneratePdfService {
     style="
       width: 100%;
       margin: 0 60px;
-      font-size: 8px;
+      color: #222222;
+      font-size: 9px;
       font-family: PingFangSC-Regular, PingFang SC;
       border-bottom:1px solid #ddd;
       padding-bottom: 4px;
@@ -163,7 +168,7 @@ export default class GeneratePdfService {
       align-items: center;
       justify-content: space-between;
     ">
-      <div>Page Header</div>
+      <div>${attachment.header}</div>
       <div style="display: flex; align-items: center;">
         <span class="pptr-server-attachment__logo"></span>
       </div>
@@ -174,8 +179,9 @@ export default class GeneratePdfService {
     <div
     style="
       width: 100%;
-      margin:0 60px;
-      font-size: 8px;
+      margin: 0 60px;
+      color: #222222;
+      font-size: 9px;
       font-family: PingFangSC-Regular, PingFang SC;
       border-top:1px solid #ddd;
       padding-top: 4px;
@@ -184,12 +190,13 @@ export default class GeneratePdfService {
       align-items: center;
       justify-content: space-between;
     ">
-      <div style="">Page Footer</div>
+      <div>${attachment.footer}</div>
       <div style="display: flex; align-items: center;">
-        <span class="pptr-server-attachment__logo"></span>
-        <span>Page number for footer：</span>
-        <span class="pageNumber"></span> /
-        <span class="totalPages"></span>
+        <!-- <span class="pptr-server-attachment__logo"></span>  -->
+        <!-- <span>Page number for footer：</span> -->
+        <span class="pageNumber"></span>
+        <!-- <span> / </span>   -->
+        <!-- <span class="totalPages"></span>  -->
       </div>
     </div>`
 
@@ -200,8 +207,8 @@ export default class GeneratePdfService {
       extraProps['footerTemplate'] = footerTemplate
       extraProps['margin'] = {
         top: 70,
-        left: 82,
-        right: 82,
+        left: 81,
+        right: 81,
         bottom: 70
       }
     }
