@@ -51,6 +51,7 @@ export default class GeneratePdfService {
       url,
       cookies = [],
       hasMargin = true,
+      isLandscape = false,
       attachment = {
         header: 'Page Header',
         footer: 'Page Footer'
@@ -215,6 +216,7 @@ export default class GeneratePdfService {
 
     const buffer = await page.pdf({
       format: 'a4',
+      landscape: isLandscape,
       printBackground: true,
       ...extraProps
     })

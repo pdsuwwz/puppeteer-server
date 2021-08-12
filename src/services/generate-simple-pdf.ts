@@ -13,7 +13,10 @@ curl --location --request GET \
 export default class GenerateSimplePdfService {
   generate = async (params: RouterQuery): Promise<Buffer> => {
 
-    const { url } = params
+    const {
+      url,
+      isLandscape = 1
+    } = params
 
     const browser = await puppeteer.launch({
       dumpio: true,
@@ -38,6 +41,7 @@ export default class GenerateSimplePdfService {
 
     const buffer = await page.pdf({
       format: 'a4',
+      landscape: !!isLandscape,
       printBackground: true
     })
 

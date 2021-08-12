@@ -17,6 +17,7 @@ export interface RequestBody {
   url?: string
   cookies?: Array<Cookies>
   hasMargin?: boolean
+  isLandscape?: boolean
   attachment?: Attachment
 }
 

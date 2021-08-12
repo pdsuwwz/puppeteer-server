@@ -3,6 +3,7 @@ import GenerateSimplePdfService from '@/services/generate-simple-pdf'
 
 export interface RouterQuery {
   url?: string
+  isLandscape?: string
 }
 
 
@@ -11,7 +12,10 @@ class GenerateSimplePdfController {
 
   generate = async (ctx: Koa.Context) => {
     // https://stackoverflow.com/a/39672914/13202554
-    const { url }: RouterQuery = ctx.query
+    const {
+      url,
+      isLandscape
+    }: RouterQuery = ctx.query
 
     if (!url) {
       ctx.status = 404
@@ -22,7 +26,8 @@ class GenerateSimplePdfController {
     }
 
     const pdf = await this.service.generate({
-      url
+      url,
+      isLandscape
     })
 
     if (Object.prototype.toString.call(pdf) === '[object Uint8Array]') {
