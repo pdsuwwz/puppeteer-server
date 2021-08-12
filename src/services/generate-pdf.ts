@@ -135,9 +135,9 @@ export default class GeneratePdfService {
       content: `
         @media print {
           /*
-          .xxx-class {
-            page-break-before: always;
-          }
+            .xxx-class {
+              page-break-before: always;
+            }
           */
         }
       `
