@@ -15,7 +15,7 @@ export default class GenerateSimplePdfService {
 
     const {
       url,
-      isLandscape = 1
+      isLandscape = '1'
     } = params
 
     const browser = await puppeteer.launch({
@@ -41,7 +41,7 @@ export default class GenerateSimplePdfService {
 
     const buffer = await page.pdf({
       format: 'a4',
-      landscape: !!isLandscape,
+      landscape: isLandscape === '1',
       printBackground: true
     })
 
