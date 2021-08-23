@@ -52,6 +52,7 @@ export default class GeneratePdfService {
       cookies = [],
       hasMargin = true,
       isLandscape = false,
+      hiddenWatermark = false,
       attachment = {
         header: 'Page Header',
         footer: 'Page Footer'
@@ -86,7 +87,8 @@ export default class GeneratePdfService {
     })
 
     // Get the "viewport" of the page, as reported by the page.
-    await page.evaluate(async ({ watermarkImage }) => {
+    await page.evaluate(async ({ watermarkImage, hiddenWatermark }) => {
+      if (hiddenWatermark) return {}
 
       const waitImage = (src: string) => {
         return new Promise((resolve) => {
@@ -127,7 +129,8 @@ export default class GeneratePdfService {
     }, {
       watermarkImage: hasMargin
         ? watermarkImage
-        : watermarkImageFull
+        : watermarkImageFull,
+      hiddenWatermark
     })
 
     // Css for print mode

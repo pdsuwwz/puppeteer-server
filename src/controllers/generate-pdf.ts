@@ -18,6 +18,7 @@ export interface RequestBody {
   cookies?: Array<Cookies>
   hasMargin?: boolean
   isLandscape?: boolean
+  hiddenWatermark?: boolean
   attachment?: Attachment
 }
 
