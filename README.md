@@ -20,6 +20,8 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 
 - Extensible PDF watermark, header and footer.
 
+- Supports merging of multiple PDF files.
+
 - HMR.
 
 ## Project structure
