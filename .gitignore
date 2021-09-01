@@ -54,10 +54,6 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# static files directory
-static/*
-!static/.gitkeep
-
 templates/*
 !templates/test.hbs
 
