@@ -14,7 +14,7 @@ const attachmentImage = fs.readFileSync(
   }
 )
 
-const watermarkImage = fs.readFileSync(
+const watermarkImageVertical = fs.readFileSync(
   path.resolve(
     process.cwd(),
     'static/cover-watermark.png'
@@ -23,10 +23,29 @@ const watermarkImage = fs.readFileSync(
     encoding: 'base64'
   }
 )
-const watermarkImageFull = fs.readFileSync(
+const watermarkImageFullVertical = fs.readFileSync(
   path.resolve(
     process.cwd(),
     'static/cover-watermark-full.png'
+  ),
+  {
+    encoding: 'base64'
+  }
+)
+
+const watermarkImageLandscape = fs.readFileSync(
+  path.resolve(
+    process.cwd(),
+    'static/cover-watermark-landscape.png'
+  ),
+  {
+    encoding: 'base64'
+  }
+)
+const watermarkImageFullLandscape = fs.readFileSync(
+  path.resolve(
+    process.cwd(),
+    'static/cover-watermark-full-landscape.png'
   ),
   {
     encoding: 'base64'
@@ -86,6 +105,17 @@ export default class GeneratePdfService {
       waitUntil: 'networkidle2'
     })
 
+    let waterImage = ''
+    if (isLandscape) {
+      waterImage = hasMargin
+        ? watermarkImageLandscape
+        : watermarkImageFullLandscape
+    } else {
+      waterImage = hasMargin
+        ? watermarkImageVertical
+        : watermarkImageFullVertical
+    }
+
     // Get the "viewport" of the page, as reported by the page.
     await page.evaluate(async ({ watermarkImage, hiddenWatermark }) => {
       if (hiddenWatermark) return {}
@@ -127,9 +157,7 @@ export default class GeneratePdfService {
 
       }
     }, {
-      watermarkImage: hasMargin
-        ? watermarkImage
-        : watermarkImageFull,
+      watermarkImage: waterImage,
       hiddenWatermark
     })
 
