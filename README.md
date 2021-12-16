@@ -10,7 +10,7 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 
 - Separation business logic and Controllers.
 
-- The best practice for Puppeteer project.
+- Probably the best practice for Puppeteer project.
 
 - Configured routing.
 
@@ -28,8 +28,8 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 
 ```
 ├── src
-│   ├── controllers  ---  Server controllers
-│   ├── services     ---  Server services
+│   ├── controllers/ ---  Server controllers
+│   ├── services/    ---  Server services
 │   ├── config.ts    ---  About Environments variable
 │   ├── main.ts      ---  Entry file
 │   └── routes.ts    ---  Configs for routing controllers
@@ -51,6 +51,7 @@ yarn dev
 
 The project has built-in a `pm2`, running the `yarn start` will automatically manage the process by `pm2`.
 
+Run `yarn build` to build, then run `yarn start` to start the process managed by `pm2`:
 ```bash
 yarn start
 ```
