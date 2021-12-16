@@ -1,6 +1,6 @@
 # Puppeteer Server
 
-Koa + TypeScript + Rollup + Puppeteer
+🦩 Koa + TypeScript + Rollup + Puppeteer
 
 ## Prerequisites
 
