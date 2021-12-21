@@ -4,13 +4,13 @@ import GeneratePdfController from '@/controllers/generate-pdf'
 import GenerateSimplePdfController from '@/controllers/generate-simple-pdf'
 import GenerateCombinePdfController from '@/controllers/generate-combine-pdf'
 
-interface routeConfig {
+interface RouteConfig {
   path: string
   method: string | 'get' | 'post' | 'delete' | 'put'
   action: unknown
 }
 
-const routes: Array<routeConfig> = [
+const routes: Array<RouteConfig> = [
   {
     path: '/',
     method: 'get',

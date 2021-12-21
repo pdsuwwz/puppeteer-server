@@ -5,7 +5,7 @@ dist \
 static \
 ecosystem.config.js \
 package.json \
-yarn.lock \
+pnpm-lock.yaml \
 my-company@172.20.30.41:/home/my-company/pdsuwwz-test/.
 
 # chmod u+x sync.sh
