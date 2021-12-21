@@ -1,3 +1,4 @@
+import { RollupOptions, ModuleFormat, OutputOptions } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { getBabelOutputPlugin } from '@rollup/plugin-babel'
 import ts from 'rollup-plugin-typescript2'
@@ -8,13 +9,13 @@ import path from 'path'
 const { getPresetsEnv } = require('./babel.presets')
 const pkg = require(path.resolve('package.json'))
 
-const formats = [
+const formats: Array<ModuleFormat> = [
   'cjs',
   'esm'
 ]
-const output = formats.map((format) => {
+const output: Array<OutputOptions> = formats.map((format) => {
   const fileName = `bundle.${format}.js`
-  return {
+  const result: OutputOptions = {
     file: `dist/${fileName}`,
     format,
     banner: `
@@ -27,9 +28,10 @@ const output = formats.map((format) => {
     `,
     sourcemap: false
   }
+  return result
 })
 
-export default {
+const rollupConfig: RollupOptions = {
   input: 'src/main.ts',
   output,
   external: [
@@ -57,3 +59,5 @@ export default {
     })
   ]
 }
+
+export default rollupConfig

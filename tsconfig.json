@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "declaration": false,
     "resolveJsonModule": true,
@@ -17,7 +17,7 @@
     "sourceMap": false,
     "outDir": "./dist",
     "baseUrl": "./",
-    "lib": ["dom", "ES2020"],
+    "lib": ["dom", "esnext"],
     "types": ["puppeteer", "node"],
     "paths": {
       "@/*": [
@@ -27,7 +27,6 @@
   },
   "exclude": [
     "dist",
-    "node_modules",
-    "rollup.config.ts"
+    "node_modules"
   ]
 }
