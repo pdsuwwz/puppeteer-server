@@ -8,21 +8,21 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 
 ## Feature
 
-- Separation business logic and Controllers.
+🌌 Separation business logic and Controllers.
 
-- Probably the best practice for Puppeteer project.
+🐣 Probably the best practice for Puppeteer project.
 
-- Configured routing.
+🧩 Configured routing.
 
-- Eslint configuration.
+🚧 Eslint configuration.
 
-- Fast build with Rollup.
+⚡ Fast build with Rollup.
 
-- Extensible PDF watermark, header and footer.
+🕊 Extensible PDF watermark, header and footer.
 
-- Supports merging of multiple PDF files.
+🧲 Supports merging of multiple PDF files.
 
-- HMR.
+🔥 HMR.
 
 ## Project structure
 
@@ -38,22 +38,22 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 ## Installation
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Running Development
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Running Production
 
-The project has built-in a `pm2`, running the `yarn start` will automatically manage the process by `pm2`.
+The project has built-in a `pm2`, running the `pnpm start` will automatically manage the process by `pm2`.
 
-Run `yarn build` to build, then run `yarn start` to start the process managed by `pm2`:
+Run `pnpm build` to build, then run `pnpm start` to start the process managed by `pm2`:
 ```bash
-yarn start
+pnpm start
 ```
 
 ## API
@@ -105,7 +105,7 @@ In order to make the routing information more readable and transparent, the form
 You can create an `array` and then write the routing meta information into the `array`, and reuse it in the `src/routes.ts`
 
 ```ts
-const routes: Array<routeConfig> = [
+const routes: Array<RouteConfig> = [
   {
     path: '/',
     method: 'get',
@@ -118,3 +118,4 @@ const routes: Array<routeConfig> = [
 # License
 
 [MIT](LICENSE)
+

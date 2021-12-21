@@ -2,5 +2,8 @@
   "restartable": "rs",
   "watch": ["src"],
   "ext": "ts",
-  "exec": "yarn watch"
+  "exec": "pnpm watch",
+  "events": {
+    "start": "echo \"\\x1Bc\""
+  }
 }
