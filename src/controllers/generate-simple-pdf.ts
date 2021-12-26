@@ -8,7 +8,7 @@ export interface RouterQuery {
 
 
 class GenerateSimplePdfController {
-  private service: GenerateSimplePdfService = new GenerateSimplePdfService();
+  private service: GenerateSimplePdfService = new GenerateSimplePdfService()
 
   generate = async (ctx: Koa.Context) => {
     // https://stackoverflow.com/a/39672914/13202554
@@ -34,7 +34,7 @@ class GenerateSimplePdfController {
       ctx.type = 'application/pdf'
     }
     ctx.body = pdf
-  };
+  }
 }
 
 export default new GenerateSimplePdfController()

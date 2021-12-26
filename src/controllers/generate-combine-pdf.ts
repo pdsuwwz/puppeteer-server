@@ -40,7 +40,7 @@ class GenerateCombinePdfController {
       ctx.type = 'application/pdf'
     }
     ctx.body = totalPdf
-  };
+  }
 }
 
 export default new GenerateCombinePdfController()

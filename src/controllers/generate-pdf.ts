@@ -23,7 +23,7 @@ export interface RequestBody {
 }
 
 class GeneratePdfController {
-  private service: GeneratePdfService = new GeneratePdfService();
+  private service: GeneratePdfService = new GeneratePdfService()
 
   generate = async (ctx: Koa.Context) => {
     const {
@@ -51,7 +51,7 @@ class GeneratePdfController {
       ctx.type = 'application/pdf'
     }
     ctx.body = pdf
-  };
+  }
 }
 
 export default new GeneratePdfController()

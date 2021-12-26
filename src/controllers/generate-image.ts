@@ -2,7 +2,7 @@ import Koa from 'koa'
 import GenerateImageService from '@/services/generate-image'
 
 class GenerateImageController {
-  private service: GenerateImageService = new GenerateImageService();
+  private service: GenerateImageService = new GenerateImageService()
 
   generate = async (ctx: Koa.Context) => {
     const img = await this.service.generate(ctx)
@@ -10,7 +10,7 @@ class GenerateImageController {
       ctx.type = 'image/png'
     }
     ctx.body = img
-  };
+  }
 }
 
 export default new GenerateImageController()
