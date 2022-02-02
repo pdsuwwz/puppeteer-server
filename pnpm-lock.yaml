@@ -22,7 +22,7 @@ specifiers:
   axios: ^0.25.0
   babel-plugin-module-resolver: ^4.1.0
   conventional-changelog-cli: ^2.2.2
-  dotenv: ^15.0.0
+  dotenv: ^16.0.0
   eslint: ^8.5.0
   koa: ^2.13.4
   koa-bodyparser: 4.3.0
@@ -42,7 +42,7 @@ specifiers:
 
 dependencies:
   '@koa/cors': 3.1.0
-  dotenv: 15.0.0
+  dotenv: 16.0.0
   koa: 2.13.4
   koa-bodyparser: 4.3.0
   koa-router: 10.1.1
@@ -2816,8 +2816,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /dotenv/15.0.0:
-    resolution: {integrity: sha512-/l1sXXm79ry34KwwS0y4oVZjB468iw/6u9g1W26dtexKcIJAnVL2pMF+hxQwzZ7LutxOwEgtym9eIxvX33CMKg==}
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
     engines: {node: '>=12'}
     dev: false
 
