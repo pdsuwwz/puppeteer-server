@@ -13,7 +13,7 @@ specifiers:
   '@rollup/plugin-typescript': ^8.3.0
   '@types/bluebird': '*'
   '@types/koa': ^2.13.4
-  '@types/koa-bodyparser': 4.3.5
+  '@types/koa-bodyparser': 4.3.6
   '@types/koa-router': ^7.4.4
   '@types/koa__cors': ^3.1.1
   '@types/node': ^17.0.5
@@ -61,7 +61,7 @@ devDependencies:
   '@rollup/plugin-typescript': 8.3.0_7c5ff569c0887b4f0035eb7cb6988163
   '@types/bluebird': 3.5.36
   '@types/koa': 2.13.4
-  '@types/koa-bodyparser': 4.3.5
+  '@types/koa-bodyparser': 4.3.6
   '@types/koa-router': 7.4.4
   '@types/koa__cors': 3.1.1
   '@types/node': 17.0.5
@@ -1675,8 +1675,8 @@ packages:
     resolution: {integrity: sha512-GJhpTepz2udxGexqos8wgaBx4I/zWIDPh/KOGEwAqtuGDkOUJu5eFvwmdBX4AmB8Odsr+9pHCQqiAqDL/yKMKw==}
     dev: true
 
-  /@types/koa-bodyparser/4.3.5:
-    resolution: {integrity: sha512-NRqqoTtt7cfdDk/KNo+EwCIKRuzPAu/wsaZ7tgIvSIBtNfxuZHYueaLoWdxX3ZftWavQv07NE46TcpyoZGqpgQ==}
+  /@types/koa-bodyparser/4.3.6:
+    resolution: {integrity: sha512-keCpj2kmoooL2oHC9YIVvciN66uDT21uMp4rvrosyjLsHD1aAipn6cg3xSxav9tR2Ly/NMvs8jdlNPTTQvn8SA==}
     dependencies:
       '@types/koa': 2.13.4
     dev: true
