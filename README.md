@@ -109,7 +109,7 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 Merge multiple PDF files into one file.
 
-See [Merge Test](https://github.com/pdsuwwz/puppeteer-server/blob/7e7394eea0963982342b480ddf98266f5e6f46f4/__test__/axios-node.js)
+See [Merge Test](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
 
 
 ## Routing
