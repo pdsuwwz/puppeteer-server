@@ -14,7 +14,7 @@ service({
         url: 'https://github.com/pdsuwwz',
       },
       {
-        url: 'https://vuejs.org/v2/api/',
+        url: 'https://vuejs.org/api/',
         hasMargin: false,
         cookies: [
           {
