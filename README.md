@@ -2,7 +2,11 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server?ref=badge_shield)
 
 
-🦩 Koa + TypeScript + Rollup + Puppeteer
+> 🦩 Koa + TypeScript + Rollup + Puppeteer
+
+* Fast Generate into PDF and images from any webpage.
+
+* Support merge multiple webpages into one PDF file, injection of Cookies, Watermark addition and Header and Footer insertion
 
 ## Screenshot
 
