@@ -11,11 +11,17 @@ service({
   data: {
     pdfList: [
       {
-        url: 'https://github.com/pdsuwwz',
+        url: 'https://www.google.com/',
+        isLandscape: true,
+        attachment: {
+          header: 'Header 自定义页眉',
+          footer: 'Footer 自定义页脚',
+        }
       },
       {
-        url: 'https://vuejs.org/api/',
-        hasMargin: false,
+        url: 'https://zh-hans.reactjs.org/',
+        // hasMargin: false,
+        isLandscape: true,
         cookies: [
           {
             name: 'token',
