@@ -45,14 +45,14 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 
 ## Project structure
 
-```
+<pre>
 ├── src
 │   ├── controllers/ ---  Server controllers
 │   ├── services/    ---  Server services
 │   ├── config.ts    ---  About Environments variable
 │   ├── main.ts      ---  Entry file
-│   └── routes.ts    ---  Configs for routing controllers
-```
+│   └── routes.ts    ---  Configs for routing controllers <a href="#Routing">👉 Routing</a>
+</pre>
 
 ## Installation
 
@@ -130,7 +130,7 @@ See [Merge Test](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/
 
 In order to make the routing information more readable and transparent, the form of configuration is adopted here.
 
-You can create an `array` and then write the routing meta information into the `array`, and reuse it in the `src/routes.ts`
+You can create an `array` and then write the routing meta information into the `array`, and reuse it in the [src/routes.ts](https://github.com/pdsuwwz/puppeteer-server/blob/main/src/routes.ts)
 
 ```ts
 const routes: Array<RouteConfig> = [
