@@ -1,6 +1,9 @@
 # Puppeteer Server
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server?ref=badge_shield)
 
+English | [中文](README-zh.md)
+
+## Introduction
 
 > 🦩 Koa + TypeScript + Rollup + Puppeteer
 
@@ -68,6 +71,15 @@ pnpm dev
 The project has built-in a `pm2`, running the `pnpm start` will automatically manage the process by `pm2`.
 
 Run `pnpm build` to build, then run `pnpm start` to start the process managed by `pm2`:
+
+* Build
+
+```bash
+pnpm build
+```
+
+* Run
+
 ```bash
 pnpm start
 ```
