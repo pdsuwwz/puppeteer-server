@@ -21,27 +21,27 @@ English | [中文](README-zh.md)
 
 
 
-## Prerequisites
+## 🎯 Prerequisites
 
 Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed on your operating system.
 
-## Feature
+## ✨ Features
 
-🌌 Separation business logic and Controllers.
+* 🌈 Separation business logic and Controllers.
 
-🐣 Probably the best practice for Puppeteer project.
+* 🛡 Probably the best practice for Puppeteer project.
 
-🧩 Configured routing.
+* 🧩 Configured routing.
 
-🚧 Eslint configuration.
+* 🚧 Eslint configuration.
 
-⚡ Fast build with Rollup.
+* ⚡ Fast build with Rollup.
 
-🕊 Extensible PDF watermark, header and footer.
+* 🔌 Extensible PDF watermark, header and footer.
 
-🧲 Supports merging of multiple PDF files.
+* 🧲 Supports merging of multiple PDF files.
 
-🔥 HMR.
+* 🔥 HMR.
 
 ## Project structure
 
@@ -54,19 +54,21 @@ Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed o
 │   └── routes.ts    ---  Configs for routing controllers <a href="#Routing">👉 Routing</a>
 </pre>
 
-## Installation
+## ⚡ Quick Start
+
+### 1. Installation
 
 ```bash
 pnpm install
 ```
 
-## Running Development
+### 2. Running Development
 
 ```bash
 pnpm dev
 ```
 
-## Running Production
+### 3. Running Production
 
 The project has built-in a `pm2`, running the `pnpm start` will automatically manage the process by `pm2`.
 
