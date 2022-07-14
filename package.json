@@ -31,7 +31,7 @@
     "dotenv": "^16.0.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "4.3.0",
-    "koa-router": "^10.1.1",
+    "koa-router": "^11.0.0",
     "pdf-lib": "^1.17.1",
     "puppeteer": "^13.0.1"
   },
