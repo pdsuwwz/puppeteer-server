@@ -60,7 +60,7 @@
     "nodemon": "^2.0.15",
     "pm2": "^5.1.2",
     "rollup": "^2.62.0",
-    "rollup-plugin-typescript2": "^0.31.1",
+    "rollup-plugin-typescript2": "^0.32.0",
     "ts-node": "^10.4.0",
     "ts-toolbelt": "^9.6.0",
     "tsc-alias": "^1.5.0",
