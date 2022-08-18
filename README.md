@@ -1,96 +1,98 @@
 # Puppeteer Server
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server?ref=badge_shield)
 
-English | [中文](README-zh.md)
+中文 | [English](README-en.md)
 
-## Introduction
+## 介绍
 
 > 🦩 Koa + TypeScript + Rollup + Puppeteer
 
-* Fast Generate into PDF and images from any webpage.
+* 能够将任意网页快速生成为 PDF、图片。
 
-* Support merge multiple webpages into one PDF file, injection of Cookies, Watermark addition and Header and Footer insertion
+* 支持将多个网页合并，并最终生成一个 PDF 文件，支持 Cookie 的注入、PDF 水印的添加和页眉页脚的插入。
 
-## Screenshot
+## ✨ 特性
 
-* Merge Combine the two websites into a PDF file
-> 📦 See [Combine Code](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
+* 🌈 解耦了业务层和控制层
+
+* 🛡 可能是 Puppeteer 项目的最佳实践
+
+* 🧩 可配置的路由
+
+* 🚧 内置 Eslint 语法风格检查
+
+* ⚡ 使用 Rollup 快速构建
+
+* 🔌 内置了 PDF 水印、页眉和页脚，可自行修改及扩展
+
+* 🧲 支持合并多个 PDF 文件
+
+* 🔥 支持开发环境下的模块热更新
+
+
+## 截图
+
+* 示例：合并两个网站到一个 PDF 文件
+> 📦 见代码 [Combine Code](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
 
 
 ![image](https://user-images.githubusercontent.com/19891724/159743021-e1f9f528-d6d9-4d6b-b63f-4e71c6b72bdb.png)
 
 
 
-## 🎯 Prerequisites
+## 🎯 前序准备
 
-Please make sure that [Node.js](https://nodejs.org/) (>= 10.18.1) is installed on your operating system.
+请确保安装了 [Node.js](https://nodejs.org/)(>= 10.18.1)
 
-## ✨ Features
 
-* 🌈 Separation business logic and Controllers.
-
-* 🛡 Probably the best practice for Puppeteer project.
-
-* 🧩 Configured routing.
-
-* 🚧 Eslint configuration.
-
-* ⚡ Fast build with Rollup.
-
-* 🔌 Extensible PDF watermark, header and footer.
-
-* 🧲 Supports merging of multiple PDF files.
-
-* 🔥 HMR.
-
-## Project structure
+## 项目结构
 
 <pre>
 ├── src
-│   ├── controllers/ ---  Server controllers
-│   ├── services/    ---  Server services
-│   ├── config.ts    ---  About Environments variable
-│   ├── main.ts      ---  Entry file
-│   └── routes.ts    ---  Configs for routing controllers <a href="#Routing">👉 Routing</a>
+│   ├── controllers/ ---  控制层，负责调用业务层的接口
+│   ├── services/    ---  业务层，负责编写具体的业务代码
+│   ├── config.ts    ---  用于导出一些全局变量
+│   ├── main.ts      ---  入口文件
+│   └── routes.ts    ---  用于配置路由元信息 <a href="#路由配置">👉 路由配置</a>
 </pre>
 
-## ⚡ Quick Start
+## ⚡ 快速开始
 
-### 1. Installation
+### 1. 安装
 
 ```bash
 pnpm install
 ```
 
-### 2. Running Development
+### 2. 开发环境运行
 
 ```bash
 pnpm dev
 ```
 
-### 3. Running Production
+### 3. 生产环境运行
 
-The project has built-in a `pm2`, running the `pnpm start` will automatically manage the process by `pm2`.
+该项目已内置 `pm2`，在构建完毕后运行 `pnpm start` 即可使用 `pm2` 管理进程。
 
-Run `pnpm build` to build, then run `pnpm start` to start the process managed by `pm2`:
+运行 `pnpm build` 进行构建，然后运行 `pnpm start` 启动由 `pm2` 管理的进程:
 
-* Build
+* 打包构建
 
 ```bash
 pnpm build
 ```
 
-* Run
+* 运行
 
 ```bash
 pnpm start
 ```
 
-## API
+## 核心接口
 
 * `GET /image`
 
-Generate screenshot.
+用于生成一张图片
 
 ```bash
 curl --location --request GET \
@@ -100,7 +102,7 @@ curl --location --request GET \
 
 * `GET /simple-pdf`
 
-Generate pdf.
+用于生成一个 PDF 文件
 
 ```bash
 curl --location --request GET \
@@ -110,7 +112,7 @@ curl --location --request GET \
 
 * `POST /pdf`
 
-Generate pdf with elements such as headers and footers.
+可生成一个带有自定义页眉和页脚的 PDF（页眉页脚的内容可通过参数来控制是否显示）
 
 ```bash
 curl --location --request POST 'http://localhost:5000/pdf' \
@@ -123,16 +125,16 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 * `POST /combine-pdf`
 
-Merge multiple PDF files into one file.
+用于将多个 PDF 文件合并到一个文件
 
-See [Merge Test](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
+查看 [示例代码](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
 
 
-## Routing
+## 路由配置
 
-In order to make the routing information more readable and transparent, the form of configuration is adopted here.
+为了使路由元数据更具可读性和透明性，这里采用了配置化的方式
 
-You can create an `array` and then write the routing meta information into the `array`, and reuse it in the [src/routes.ts](https://github.com/pdsuwwz/puppeteer-server/blob/main/src/routes.ts)
+你可以创建一个 `数组`，然后将路由元信息写入该 `数组` 中，并在 [src/routes.ts](https://github.com/pdsuwwz/puppeteer-server/blob/main/src/routes.ts) 中重用它
 
 ```ts
 const routes: Array<RouteConfig> = [
@@ -145,7 +147,7 @@ const routes: Array<RouteConfig> = [
 ]
 ```
 
-# License
+# 许可证
 
 :v:
 
