@@ -33,7 +33,7 @@
     "koa-bodyparser": "4.3.0",
     "koa-router": "^10.1.1",
     "pdf-lib": "^1.17.1",
-    "puppeteer": "^13.7.0"
+    "puppeteer": "^16.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
