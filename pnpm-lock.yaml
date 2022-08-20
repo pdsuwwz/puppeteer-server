@@ -32,7 +32,7 @@ specifiers:
   pm2: ^5.2.0
   puppeteer: ^16.2.0
   rollup: ^2.78.1
-  rollup-plugin-typescript2: ^0.32.1
+  rollup-plugin-typescript2: ^0.33.0
   ts-node: ^10.9.1
   ts-toolbelt: ^9.6.0
   tsc-alias: ^1.7.0
@@ -74,7 +74,7 @@ devDependencies:
   nodemon: 2.0.19
   pm2: 5.2.0
   rollup: 2.78.1
-  rollup-plugin-typescript2: 0.32.1_accrhai6qopda76wnqb3pkewpq
+  rollup-plugin-typescript2: 0.33.0_accrhai6qopda76wnqb3pkewpq
   ts-node: 10.9.1_itmtyrrie7wpjnrpwbb5uqyzwa
   ts-toolbelt: 9.6.0
   tsc-alias: 1.7.0
@@ -2591,8 +2591,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -5067,8 +5067,8 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rollup-plugin-typescript2/0.32.1_accrhai6qopda76wnqb3pkewpq:
-    resolution: {integrity: sha512-RanO8bp1WbeMv0bVlgcbsFNCn+Y3rX7wF97SQLDxf0fMLsg0B/QFF005t4AsGUcDgF3aKJHoqt4JF2xVaABeKw==}
+  /rollup-plugin-typescript2/0.33.0_accrhai6qopda76wnqb3pkewpq:
+    resolution: {integrity: sha512-7ZXoZeX93kNb4/ICzOi2AlperVV6cAsNz8THqrbz+KNvpn47P2F/nFdK/BGhkoOsOwuYDuY57vccdZZrcd8/dA==}
     peerDependencies:
       rollup: '>=1.26.3'
       typescript: '>=2.4.0'
@@ -5076,7 +5076,6 @@ packages:
       '@rollup/pluginutils': 4.2.1
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
-      resolve: 1.22.1
       rollup: 2.78.1
       tslib: 2.4.0
       typescript: 4.7.4
