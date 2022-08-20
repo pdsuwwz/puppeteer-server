@@ -5,11 +5,11 @@ English | [中文](README.md)
 
 ## Introduction
 
-> 🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
+🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
 
-* Fast Generate into PDF and images from any webpage.
-
-* Support merge multiple webpages into one PDF file, injection of Cookies, Watermark addition and Header and Footer insertion
+> * Fast Generate into PDF and images from any webpage.
+>
+> * Support merge multiple webpages into one PDF file, injection of Cookies, Watermark addition and Header and Footer insertion
 
 
 ## ✨ Features

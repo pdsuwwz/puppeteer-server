@@ -5,11 +5,11 @@
 
 ## 介绍
 
-> 🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
+🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
 
-* 能够将任意网页快速生成为 PDF、图片。
-
-* 支持将多个网页合并，并最终生成一个 PDF 文件，支持 Cookie 的注入、PDF 水印的添加和页眉页脚的插入。
+> * 能够将任意网页快速生成为 PDF、图片。
+>
+> * 支持将多个网页合并，并最终生成一个 PDF 文件，支持 Cookie 的注入、PDF 水印的添加和页眉页脚的插入。
 
 ## ✨ 特性
 
