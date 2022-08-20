@@ -5,7 +5,7 @@ English | [中文](README.md)
 
 ## Introduction
 
-> 🦩 Koa + TypeScript + Rollup + Puppeteer
+> 🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
 
 * Fast Generate into PDF and images from any webpage.
 
@@ -28,7 +28,7 @@ English | [中文](README.md)
 
 * 🧲 Supports merging of multiple PDF files.
 
-* 🔥 HMR.
+* 🔥 Based on Nodemon HMR.
 
 
 ## Screenshot

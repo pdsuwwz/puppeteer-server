@@ -5,7 +5,7 @@
 
 ## 介绍
 
-> 🦩 Koa + TypeScript + Rollup + Puppeteer
+> 🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
 
 * 能够将任意网页快速生成为 PDF、图片。
 
@@ -27,7 +27,7 @@
 
 * 🧲 支持合并多个 PDF 文件
 
-* 🔥 支持开发环境下的模块热更新
+* 🔥 支持 Nodemon 开发环境下的模块热更新
 
 
 ## 截图
