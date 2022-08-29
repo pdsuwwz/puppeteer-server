@@ -30,7 +30,7 @@ specifiers:
   nodemon: ^2.0.19
   pdf-lib: ^1.17.1
   pm2: ^5.2.0
-  puppeteer: ^16.2.0
+  puppeteer: ^17.0.0
   rollup: ^2.78.1
   rollup-plugin-typescript2: ^0.33.0
   ts-node: ^10.9.1
@@ -47,7 +47,7 @@ dependencies:
   koa-bodyparser: 4.3.0
   koa-router: 12.0.0
   pdf-lib: 1.17.1
-  puppeteer: 16.2.0
+  puppeteer: 17.0.0
 
 devDependencies:
   '@babel/core': 7.18.10
@@ -4820,8 +4820,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /puppeteer/16.2.0:
-    resolution: {integrity: sha512-7Au6iC98rS6WEAD110V4Bxd0iIbqoFtzz9XzkG1BSofidS1VAJ881E1+GFR7Xn2Yea0hbj8n0ErzRyseMp1Ctg==}
+  /puppeteer/17.0.0:
+    resolution: {integrity: sha512-T2rdzlPxnPezF218kywFP3O+0YI5/8Kl8riNUicGb+KuMyDTrqRjhSOSDp6coQ1T4QYPBARTFp4EMBepMOzAQA==}
     engines: {node: '>=14.1.0'}
     requiresBuild: true
     dependencies:
