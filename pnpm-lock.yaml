@@ -9,7 +9,7 @@ specifiers:
   '@rollup/plugin-babel': ^5.3.1
   '@rollup/plugin-commonjs': ^22.0.2
   '@rollup/plugin-json': ^4.1.0
-  '@rollup/plugin-node-resolve': ^13.3.0
+  '@rollup/plugin-node-resolve': ^14.0.0
   '@rollup/plugin-typescript': ^8.3.4
   '@types/bluebird': '*'
   '@types/koa': ^2.13.5
@@ -57,7 +57,7 @@ devDependencies:
   '@rollup/plugin-babel': 5.3.1_4ce4roknt3navmu3q3hwcigmqq
   '@rollup/plugin-commonjs': 22.0.2_rollup@2.78.1
   '@rollup/plugin-json': 4.1.0_rollup@2.78.1
-  '@rollup/plugin-node-resolve': 13.3.0_rollup@2.78.1
+  '@rollup/plugin-node-resolve': 14.0.0_rollup@2.78.1
   '@rollup/plugin-typescript': 8.3.4_5zsqiitiqqdgwm4iemtywlnhku
   '@types/bluebird': 3.5.36
   '@types/koa': 2.13.5
@@ -1567,11 +1567,11 @@ packages:
       rollup: 2.78.1
     dev: true
 
-  /@rollup/plugin-node-resolve/13.3.0_rollup@2.78.1:
-    resolution: {integrity: sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==}
+  /@rollup/plugin-node-resolve/14.0.0_rollup@2.78.1:
+    resolution: {integrity: sha512-XkWfpgp/zGiFu8LS+JAiQeZN4oYYA4/ViFJiZhwQegTg5ZbzKTvM9YyKXVBNnmZ8Et76WnlVgwRUu1rhKF4ayw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
-      rollup: ^2.42.0
+      rollup: ^2.78.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.78.1
       '@types/resolve': 1.17.1
