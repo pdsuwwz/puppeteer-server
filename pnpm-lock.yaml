@@ -8,7 +8,7 @@ specifiers:
   '@koa/cors': ^3.4.3
   '@rollup/plugin-babel': ^5.3.1
   '@rollup/plugin-commonjs': ^22.0.2
-  '@rollup/plugin-json': ^4.1.0
+  '@rollup/plugin-json': ^5.0.0
   '@rollup/plugin-node-resolve': ^13.3.0
   '@rollup/plugin-typescript': ^8.5.0
   '@types/bluebird': '*'
@@ -56,7 +56,7 @@ devDependencies:
   '@babel/preset-typescript': 7.18.6_@babel+core@7.19.3
   '@rollup/plugin-babel': 5.3.1_vy4anxjpv2s44kyfi2kxqu576u
   '@rollup/plugin-commonjs': 22.0.2_rollup@2.79.1
-  '@rollup/plugin-json': 4.1.0_rollup@2.79.1
+  '@rollup/plugin-json': 5.0.0_rollup@2.79.1
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
   '@rollup/plugin-typescript': 8.5.0_hafrwlgfjmvsm7253l3bfjzhnq
   '@types/bluebird': 3.5.37
@@ -1560,12 +1560,16 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@rollup/plugin-json/4.1.0_rollup@2.79.1:
-    resolution: {integrity: sha512-yfLbTdNS6amI/2OpmbiBoW12vngr5NW2jCJVZSBEz+H5KfUJZ2M7sDjk0U6GOOdCWFVScShte29o9NezJ53TPw==}
+  /@rollup/plugin-json/5.0.0_rollup@2.79.1:
+    resolution: {integrity: sha512-LsWDA5wJs/ggzakVuKQhZo7HPRcQZgBa3jWIVxQSFxaRToUGNi8ZBh3+k/gQ+1eInVYJgn4WBRCUkmoDrmmGzw==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: ^1.20.0 || ^2.0.0
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.79.1
+      '@rollup/pluginutils': 4.2.1
       rollup: 2.79.1
     dev: true
 
