@@ -5,7 +5,7 @@ specifiers:
   '@babel/node': ^7.19.1
   '@babel/preset-env': ^7.19.4
   '@babel/preset-typescript': ^7.18.6
-  '@koa/cors': ^3.4.3
+  '@koa/cors': ^4.0.0
   '@rollup/plugin-babel': ^5.3.1
   '@rollup/plugin-commonjs': ^22.0.2
   '@rollup/plugin-json': ^4.1.0
@@ -41,7 +41,7 @@ specifiers:
   typescript: ^4.8.4
 
 dependencies:
-  '@koa/cors': 3.4.3
+  '@koa/cors': 4.0.0
   dotenv: 16.0.3
   koa: 2.13.4
   koa-bodyparser: 4.3.0
@@ -1394,9 +1394,9 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@koa/cors/3.4.3:
-    resolution: {integrity: sha512-WPXQUaAeAMVaLTEFpoq3T2O1C+FstkjJnDQqy95Ck1UdILajsRhu6mhJ8H2f4NFPRBoCNN+qywTJfq/gGki5mw==}
-    engines: {node: '>= 8.0.0'}
+  /@koa/cors/4.0.0:
+    resolution: {integrity: sha512-Y4RrbvGTlAaa04DBoPBWJqDR5gPj32OOz827ULXfgB1F7piD1MB/zwn8JR2LAnvdILhxUbXbkXGWuNVsFuVFCQ==}
+    engines: {node: '>= 14.0.0'}
     dependencies:
       vary: 1.1.2
     dev: false

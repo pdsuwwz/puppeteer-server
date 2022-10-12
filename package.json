@@ -27,7 +27,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "@koa/cors": "^3.4.3",
+    "@koa/cors": "^4.0.0",
     "dotenv": "^16.0.3",
     "koa": "^2.13.4",
     "koa-bodyparser": "4.3.0",
