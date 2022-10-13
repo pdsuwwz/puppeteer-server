@@ -53,10 +53,11 @@ const rollupConfig: RollupOptions = {
           module: 'esnext'
         }
       }
-    }),
-    commonjs({
-      extensions: ['.js', '.ts']
     })
+    // Warning: Use --bundleConfigAsCjs instead of commonjs
+    // commonjs({
+    //   extensions: ['.js', '.ts']
+    // })
   ]
 }
 

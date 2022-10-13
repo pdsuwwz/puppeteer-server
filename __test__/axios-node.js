@@ -1,8 +1,10 @@
-const axios = require('axios').default
+const axios = require('axios')
 const fs = require('fs')
+
 const service = axios.create({
   baseURL: 'http://localhost:5000'
 })
+
 
 service({
   method: 'post',
