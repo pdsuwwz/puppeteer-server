@@ -33,7 +33,7 @@
 ## 截图
 
 * 示例：合并两个网站到一个 PDF 文件
-> 📦 见代码 [Combine Code](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
+> 📦 见代码 [Combine Code](__test__/axios-node.js)
 
 
 ![image](https://user-images.githubusercontent.com/19891724/159743021-e1f9f528-d6d9-4d6b-b63f-4e71c6b72bdb.png)
@@ -127,14 +127,14 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 用于将多个 PDF 文件合并到一个文件
 
-查看 [示例代码](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
+查看 [示例代码](__test__/axios-node.js)
 
 
 ## 路由配置
 
 为了使路由元数据更具可读性和透明性，这里采用了配置化的方式
 
-你可以创建一个 `数组`，然后将路由元信息写入该 `数组` 中，并在 [src/routes.ts](https://github.com/pdsuwwz/puppeteer-server/blob/main/src/routes.ts) 中重用它
+你可以创建一个 `数组`，然后将路由元信息写入该 `数组` 中，并在 [src/routes.ts](src/routes.ts) 中重用它
 
 ```ts
 const routes: Array<RouteConfig> = [

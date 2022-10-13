@@ -34,7 +34,7 @@ English | [中文](README.md)
 ## Screenshot
 
 * Merge Combine the two websites into a PDF file
-> 📦 See [Combine Code](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
+> 📦 See [Combine Code](__test__/axios-node.js)
 
 
 ![image](https://user-images.githubusercontent.com/19891724/159743021-e1f9f528-d6d9-4d6b-b63f-4e71c6b72bdb.png)
@@ -127,14 +127,14 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 Merge multiple PDF files into one file.
 
-See [Merge Test](https://github.com/pdsuwwz/puppeteer-server/blob/main/__test__/axios-node.js)
+See [Merge Test](__test__/axios-node.js)
 
 
 ## Routing
 
 In order to make the routing information more readable and transparent, the form of configuration is adopted here.
 
-You can create an `array` and then write the routing meta information into the `array`, and reuse it in the [src/routes.ts](https://github.com/pdsuwwz/puppeteer-server/blob/main/src/routes.ts)
+You can create an `array` and then write the routing meta information into the `array`, and reuse it in the [src/routes.ts](src/routes.ts)
 
 ```ts
 const routes: Array<RouteConfig> = [
