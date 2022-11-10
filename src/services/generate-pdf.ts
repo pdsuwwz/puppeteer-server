@@ -71,12 +71,15 @@ export default class GeneratePdfService {
       cookies = [],
       hasMargin = true,
       isLandscape = false,
-      hiddenWatermark = false,
-      attachment = {
-        header: 'Page Header',
-        footer: 'Page Footer'
-      }
+      hiddenWatermark = false
     } = params
+
+    let { attachment } = params
+    attachment = Object.assign({
+      header: '',
+      footer: ''
+    }, {}, attachment)
+
 
     const browser = await puppeteer.launch({
       dumpio: true,
@@ -232,12 +235,12 @@ export default class GeneratePdfService {
       </div>
     </div>`
 
-    const extraProps = {}
+    const extraProps: puppeteer.PDFOptions = {}
     if (hasMargin) {
-      extraProps['displayHeaderFooter'] = true
-      extraProps['headerTemplate'] = headerTemplate
-      extraProps['footerTemplate'] = footerTemplate
-      extraProps['margin'] = {
+      extraProps.displayHeaderFooter = true
+      extraProps.headerTemplate = headerTemplate
+      extraProps.footerTemplate = footerTemplate
+      extraProps.margin = {
         top: 70,
         left: 81,
         right: 81,
