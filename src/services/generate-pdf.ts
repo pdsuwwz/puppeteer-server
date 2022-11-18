@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer'
 import fs from 'fs'
 import path from 'path'
 
-import { RequestBody } from '@/controllers/generate-pdf'
+import type { RequestBody } from '@/controllers/generate-pdf'
 
 const attachmentImage = fs.readFileSync(
   path.resolve(

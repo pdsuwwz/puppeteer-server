@@ -1,4 +1,4 @@
-import Koa from 'koa'
+import type { Context } from 'koa'
 import puppeteer from 'puppeteer'
 
 /**
@@ -11,7 +11,7 @@ curl --location --request GET \
  */
 
 export default class GenerateImageService {
-  generate = async (ctx: Koa.Context): Promise<unknown> => {
+  generate = async (ctx: Context): Promise<unknown> => {
     if (!ctx.query.url) {
       ctx.status = 404
       return {

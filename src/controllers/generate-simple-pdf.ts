@@ -1,4 +1,4 @@
-import Koa from 'koa'
+import type { Context } from 'koa'
 import GenerateSimplePdfService from '@/services/generate-simple-pdf'
 
 export interface RouterQuery {
@@ -10,7 +10,7 @@ export interface RouterQuery {
 class GenerateSimplePdfController {
   private service: GenerateSimplePdfService = new GenerateSimplePdfService()
 
-  generate = async (ctx: Koa.Context) => {
+  generate = async (ctx: Context) => {
     // https://stackoverflow.com/a/39672914/13202554
     const {
       url,
