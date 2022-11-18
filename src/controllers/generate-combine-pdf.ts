@@ -1,8 +1,8 @@
-import Koa, { Request } from 'koa'
+import type { Request, Context } from 'koa'
+import type { RequestBody } from '@/controllers/generate-pdf'
 
 import GeneratePdfService from '@/services/generate-pdf'
 import GenerateCombinePdfService from '@/services/generate-combine-pdf'
-import { RequestBody } from '@/controllers/generate-pdf'
 
 interface RequestCombinePDF extends Request {
   body: {
@@ -10,7 +10,7 @@ interface RequestCombinePDF extends Request {
   }
 }
 
-interface ContextCombinePDF extends Koa.Context {
+interface ContextCombinePDF extends Context {
   request: RequestCombinePDF
 }
 

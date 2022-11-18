@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer'
-import { RouterQuery } from '@/controllers/generate-simple-pdf'
+import type { RouterQuery } from '@/controllers/generate-simple-pdf'
 
 /**
  * @example

@@ -1,7 +1,8 @@
 import { RollupOptions, ModuleFormat, OutputOptions } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { getBabelOutputPlugin } from '@rollup/plugin-babel'
-import ts from 'rollup-plugin-typescript2'
+// import ts from 'rollup-plugin-typescript2'
+import ts from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import commonjs from '@rollup/plugin-commonjs'
 import path from 'path'
@@ -48,10 +49,8 @@ const rollupConfig: RollupOptions = {
     nodeResolve(),
     json(),
     ts({
-      tsconfigOverride: {
-        compilerOptions: {
-          module: 'esnext'
-        }
+      compilerOptions: {
+        module: 'esnext'
       }
     })
     // Warning: Use --bundleConfigAsCjs instead of commonjs

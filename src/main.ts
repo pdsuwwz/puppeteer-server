@@ -6,8 +6,8 @@ import { PORT } from '@/config'
 import routes from '@/routes'
 import { getLocalAddress } from '@/utils'
 
-const app: Koa = new Koa()
-const router: Router = new Router()
+const app = new Koa()
+const router = new Router()
 
 
 // routes
