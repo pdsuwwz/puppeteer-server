@@ -123,11 +123,29 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 --data-urlencode 'cookies[0].domain=www.google.com' --output test-complex-pdf.pdf
 ```
 
+👆 /pdf 请求参数
+
+| 字段 | 说明 | 类型 | 默认值 |
+| -------- | -------- | -------- | -------- |
+| url | 目标网站 | string | — |
+| cookies | 如果网站需要提前内置 sessionId cookie, 一般用作需要登录才能访问的网站，则添加此字段即可 | Array<{ name, value, domain }> | [] |
+| hasMargin | 是否生成出的 PDF 含有内边距空白 | boolean | true |
+| isLandscape | 是否生成横向的 PDF | boolean | false |
+| hiddenWatermark | 是否隐藏水印 | boolean | false |
+| attachment | 展示自定义页眉页脚，前提是需要将 hasMargin 设置为 true | { header, footer } | — |
+
+
 * `POST /combine-pdf`
 
 用于将多个 PDF 文件合并到一个文件
 
 查看 [示例代码1](__test__/axios-browser.html)、[示例代码2](__test__/axios-node.js)
+
+👆 /combine-pdf 请求参数
+
+| 字段 | 说明 | 类型 | 默认值 |
+| -------- | -------- | -------- | -------- |
+| pdfList | 目标网站集合，参数类型为数组，数组内每一项即为一个 `/pdf` 所需的参数 | Array<{ pdfItem }> | [] |
 
 
 ## 路由配置
