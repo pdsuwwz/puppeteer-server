@@ -34,7 +34,7 @@ English | [中文](README.md)
 ## Screenshot
 
 * Merge Combine the two websites into a PDF file
-> 📦 See [Combine Code](__test__/axios-node.js)
+> 📦 See [Merge Test 1](__test__/axios-browser.html), [Merge Test 2](__test__/axios-node.js)
 
 
 ![image](https://user-images.githubusercontent.com/19891724/159743021-e1f9f528-d6d9-4d6b-b63f-4e71c6b72bdb.png)
@@ -127,7 +127,7 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 Merge multiple PDF files into one file.
 
-See [Merge Test](__test__/axios-node.js)
+See [Merge Test 1](__test__/axios-browser.html), [Merge Test 2](__test__/axios-node.js)
 
 
 ## Routing

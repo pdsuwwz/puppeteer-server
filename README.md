@@ -32,8 +32,8 @@
 
 ## 截图
 
-* 示例：合并两个网站到一个 PDF 文件
-> 📦 见代码 [Combine Code](__test__/axios-node.js)
+* 示例：合并多个网站到一个 PDF 文件
+> 📦 详见 [示例代码1](__test__/axios-browser.html)、[示例代码2](__test__/axios-node.js)
 
 
 ![image](https://user-images.githubusercontent.com/19891724/159743021-e1f9f528-d6d9-4d6b-b63f-4e71c6b72bdb.png)
@@ -127,7 +127,7 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 
 用于将多个 PDF 文件合并到一个文件
 
-查看 [示例代码](__test__/axios-node.js)
+查看 [示例代码1](__test__/axios-browser.html)、[示例代码2](__test__/axios-node.js)
 
 
 ## 路由配置
