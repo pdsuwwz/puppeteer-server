@@ -123,11 +123,29 @@ curl --location --request POST 'http://localhost:5000/pdf' \
 --data-urlencode 'cookies[0].domain=www.google.com' --output test-complex-pdf.pdf
 ```
 
+👆 /pdf request parameters
+
+| 字段 | 说明 | 类型 | 默认值 |
+| -------- | -------- | -------- | -------- |
+| url | Target site url | string | — |
+| cookies | Generally used as a website that requires login to access, you can add this field | Array<{ name, value, domain }> | [] |
+| hasMargin | If this field is set to true, it means that the generated PDF will contain margins | boolean | true |
+| isLandscape | Whether the generated PDF is horizontal | boolean | false |
+| hiddenWatermark | Whether to hide watermark | boolean | false |
+| attachment | Display the custom header and footer, provided that hasMargin is set to true | { header, footer } | — |
+
+
 * `POST /combine-pdf`
 
 Merge multiple PDF files into one file.
 
 See [Merge Test 1](__test__/axios-browser.html), [Merge Test 2](__test__/axios-node.js)
+
+👆 /combine-pdf request parameters
+
+| 字段 | 说明 | 类型 | 默认值 |
+| -------- | -------- | -------- | -------- |
+| pdfList | A collection of target websites, the parameter type is an array, and each item in the array is a parameter required by `/pdf` | Array<{ pdfItem }> | [] |
 
 
 ## Routing
