@@ -30,7 +30,7 @@ specifiers:
   nodemon: ^2.0.20
   pdf-lib: ^1.17.1
   pm2: ^5.2.0
-  puppeteer: ^18.2.1
+  puppeteer: ^19.0.0
   rollup: ^3.1.0
   rollup-plugin-typescript2: ^0.34.1
   ts-node: ^10.9.1
@@ -47,7 +47,7 @@ dependencies:
   koa-bodyparser: 4.3.0
   koa-router: 12.0.0
   pdf-lib: 1.17.1
-  puppeteer: 18.2.1
+  puppeteer: 19.0.0
 
 devDependencies:
   '@babel/core': 7.19.3
@@ -4837,8 +4837,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /puppeteer-core/18.2.1:
-    resolution: {integrity: sha512-MRtTAZfQTluz3U2oU/X2VqVWPcR1+94nbA2V6ZrSZRVEwLqZ8eclZ551qGFQD/vD2PYqHJwWOW/fpC721uznVw==}
+  /puppeteer-core/19.0.0:
+    resolution: {integrity: sha512-OljQ9W5M4cBX68vnOAGbcRkVENDHn6lfj6QYoGsnLQsxPAh6ExTQAhHauwdFdQkhYdDExZFWlKArnBONzeHY+g==}
     engines: {node: '>=14.1.0'}
     dependencies:
       cross-fetch: 3.1.5
@@ -4858,15 +4858,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /puppeteer/18.2.1:
-    resolution: {integrity: sha512-7+UhmYa7wxPh2oMRwA++k8UGVDxh3YdWFB52r9C3tM81T6BU7cuusUSxImz0GEYSOYUKk/YzIhkQ6+vc0gHbxQ==}
+  /puppeteer/19.0.0:
+    resolution: {integrity: sha512-3Ga5IVerQQ2hKU9q7T28RmcUsd8F2kL6cYuPcPCzeclSjmHhGydPBZL/KJKC02sG6J6Wfry85uiWpbkjQ5qBiw==}
     engines: {node: '>=14.1.0'}
     requiresBuild: true
     dependencies:
       https-proxy-agent: 5.0.1
       progress: 2.0.3
       proxy-from-env: 1.1.0
-      puppeteer-core: 18.2.1
+      puppeteer-core: 19.0.0
     transitivePeerDependencies:
       - bufferutil
       - encoding
