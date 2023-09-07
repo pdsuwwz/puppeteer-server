@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer'
+import puppeteer, { type PDFOptions } from 'puppeteer'
 import fs from 'fs'
 import path from 'path'
 
@@ -235,7 +235,7 @@ export default class GeneratePdfService {
       </div>
     </div>`
 
-    const extraProps: puppeteer.PDFOptions = {}
+    const extraProps: PDFOptions = {}
     if (hasMargin) {
       extraProps.displayHeaderFooter = true
       extraProps.headerTemplate = headerTemplate
