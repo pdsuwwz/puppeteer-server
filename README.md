@@ -1,7 +1,8 @@
 # Puppeteer Server
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server?ref=badge_small)
 
 中文 | [English](README-en.md)
+
+<img src="https://github.com/pdsuwwz/puppeteer-server/assets/19891724/86177762-8a97-4656-8ee0-5add61c50237" height="100" align-right />
 
 ## 介绍
 
