@@ -5,6 +5,12 @@ English | [中文](README.md)
 <img src="https://github.com/pdsuwwz/puppeteer-server/assets/19891724/86177762-8a97-4656-8ee0-5add61c50237" height="100" align-right />
 
 
+## 📤 Migrate to Playwright
+
+To experience enhanced features and broader browser support, the entire codebase of the latest version has seamlessly migrated to Playwright.
+
+Playwright repo: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwright-server)
+
 ## Introduction
 
 🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
