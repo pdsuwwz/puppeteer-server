@@ -4,6 +4,13 @@
 
 <img src="https://github.com/pdsuwwz/puppeteer-server/assets/19891724/86177762-8a97-4656-8ee0-5add61c50237" height="100" align-right />
 
+
+## 📤 迁移到 Playwright
+
+为了体验更好的功能和更广泛的浏览器支持，目前新版代码已全部无缝迁移到 Playwright
+
+Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwright-server)
+
 ## 介绍
 
 🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
