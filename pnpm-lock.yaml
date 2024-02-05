@@ -15,7 +15,7 @@ specifiers:
   '@types/koa': ^2.13.5
   '@types/koa-bodyparser': 4.3.10
   '@types/koa-router': ^7.4.4
-  '@types/koa__cors': ^4.0.0
+  '@types/koa__cors': ^5.0.0
   '@types/node': ^18.8.5
   '@typescript-eslint/eslint-plugin': ^5.40.0
   '@typescript-eslint/parser': ^5.40.0
@@ -63,7 +63,7 @@ devDependencies:
   '@types/koa': 2.13.5
   '@types/koa-bodyparser': 4.3.10
   '@types/koa-router': 7.4.4
-  '@types/koa__cors': 4.0.0
+  '@types/koa__cors': 5.0.0
   '@types/node': 18.8.5
   '@typescript-eslint/eslint-plugin': 5.40.0_6p2tq2dypggs6fdyvewwvnljpu
   '@typescript-eslint/parser': 5.40.0_kykkfgtuomzgyhxd4xxwxcydwe
@@ -1763,8 +1763,8 @@ packages:
       '@types/node': 18.8.5
     dev: true
 
-  /@types/koa__cors/4.0.0:
-    resolution: {integrity: sha512-qpwswNgQ2GxiDGNnKbDSBY5XmQTVJ6fspNvInLsAJ+jSwINxihvVzblj5anujNBg2BtL0xpUrcIt3UYwGzu05A==}
+  /@types/koa__cors/5.0.0:
+    resolution: {integrity: sha512-LCk/n25Obq5qlernGOK/2LUwa/2YJb2lxHUkkvYFDOpLXlVI6tKcdfCHRBQnOY4LwH6el5WOLs6PD/a8Uzau6g==}
     dependencies:
       '@types/koa': 2.13.5
     dev: true
