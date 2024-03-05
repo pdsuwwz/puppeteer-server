@@ -57,7 +57,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.25.0",
-    "nodemon": "^2.0.20",
+    "nodemon": "^3.0.0",
     "pm2": "^5.2.0",
     "rollup": "^3.1.0",
     "rollup-plugin-typescript2": "^0.34.1",
