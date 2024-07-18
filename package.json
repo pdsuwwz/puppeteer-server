@@ -32,7 +32,7 @@
     "@koa/cors": "^4.0.0",
     "dotenv": "^16.0.3",
     "koa": "^2.13.4",
-    "koa-bodyparser": "4.4.0",
+    "koa-bodyparser": "4.4.1",
     "koa-router": "^12.0.0",
     "pdf-lib": "^1.17.1"
   },
@@ -53,7 +53,7 @@
     "@stylistic/eslint-plugin": "^2.3.0",
     "@types/bluebird": "*",
     "@types/koa": "^2.13.5",
-    "@types/koa-bodyparser": "4.3.10",
+    "@types/koa-bodyparser": "4.3.12",
     "@types/koa-router": "^7.4.4",
     "@types/koa__cors": "^4.0.0",
     "@types/node": "^18.8.5",

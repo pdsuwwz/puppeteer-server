@@ -18,8 +18,8 @@ importers:
         specifier: ^2.13.4
         version: 2.15.3
       koa-bodyparser:
-        specifier: 4.4.0
-        version: 4.4.0
+        specifier: 4.4.1
+        version: 4.4.1
       koa-router:
         specifier: ^12.0.0
         version: 12.0.1
@@ -70,8 +70,8 @@ importers:
         specifier: ^2.13.5
         version: 2.15.0
       '@types/koa-bodyparser':
-        specifier: 4.3.10
-        version: 4.3.10
+        specifier: 4.3.12
+        version: 4.3.12
       '@types/koa-router':
         specifier: ^7.4.4
         version: 7.4.8
@@ -1228,8 +1228,8 @@ packages:
   '@types/keygrip@1.0.6':
     resolution: {integrity: sha512-lZuNAY9xeJt7Bx4t4dx0rYCDqGPW8RXhQZK1td7d4H6E9zYbLoOtjBvfwdTKpsyxQI/2jv+armjX/RW+ZNpXOQ==}
 
-  '@types/koa-bodyparser@4.3.10':
-    resolution: {integrity: sha512-6ae05pjhmrmGhUR8GYD5qr5p9LTEMEGfGXCsK8VaSL+totwigm8+H/7MHW7K4854CMeuwRAubT8qcc/EagaeIA==}
+  '@types/koa-bodyparser@4.3.12':
+    resolution: {integrity: sha512-hKMmRMVP889gPIdLZmmtou/BijaU1tHPyMNmcK7FAHAdATnRcGQQy78EqTTxLH1D4FTsrxIzklAQCso9oGoebQ==}
 
   '@types/koa-compose@3.2.8':
     resolution: {integrity: sha512-4Olc63RY+MKvxMwVknCUDhRQX1pFQoBZ/lXcRLP69PQkEpze/0cr8LNqJQe5NFb/b19DWi2a5bTi2VAlQzhJuA==}
@@ -2537,8 +2537,8 @@ packages:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
 
-  koa-bodyparser@4.4.0:
-    resolution: {integrity: sha512-AXPY7wwKZUmbgb8VkTEUFoRNOlx6aWRJwEnQD+zfNf33/7KSAkN4Oo9BqlIk80D+5TvuqlhpQT5dPVcyxl5Zsw==}
+  koa-bodyparser@4.4.1:
+    resolution: {integrity: sha512-kBH3IYPMb+iAXnrxIhXnW+gXV8OTzCu8VPDqvcDHW9SQrbkHmqPQtiZwrltNmSq6/lpipHnT7k7PsjlVD7kK0w==}
     engines: {node: '>=8.0.0'}
 
   koa-compose@4.1.0:
@@ -4925,7 +4925,7 @@ snapshots:
 
   '@types/keygrip@1.0.6': {}
 
-  '@types/koa-bodyparser@4.3.10':
+  '@types/koa-bodyparser@4.3.12':
     dependencies:
       '@types/koa': 2.15.0
 
@@ -6401,10 +6401,11 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  koa-bodyparser@4.4.0:
+  koa-bodyparser@4.4.1:
     dependencies:
       co-body: 6.2.0
       copy-to: 2.0.1
+      type-is: 1.6.18
 
   koa-compose@4.1.0: {}
 
