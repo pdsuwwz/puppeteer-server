@@ -1,30 +1,32 @@
-import { RollupOptions, ModuleFormat, OutputOptions } from 'rollup'
+import type { ModuleFormat, OutputOptions, RollupOptions } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { getBabelOutputPlugin } from '@rollup/plugin-babel'
-// import ts from 'rollup-plugin-typescript2'
 import ts from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
-import commonjs from '@rollup/plugin-commonjs'
-import path from 'path'
 
-const { getPresetsEnv } = require('./babel.presets')
-const pkg = require(path.resolve('package.json'))
+import pkg from './package.json' assert { type: 'json' }
 
 const formats: Array<ModuleFormat> = [
-  'cjs',
+  'commonjs',
   'esm'
 ]
 const output: Array<OutputOptions> = formats.map((format) => {
-  const fileName = `bundle.${format}.js`
+  const suffix = {
+    value: 'js'
+  }
+  if (format === 'commonjs') {
+    suffix.value = 'cjs'
+  }
+  const fileName = `bundle.${ format }.${ suffix.value }`
   const result: OutputOptions = {
-    file: `dist/${fileName}`,
+    file: `dist/${ fileName }`,
     format,
     banner: `
       /**
        * @license
-       * author: ${pkg.author}
-       * ${fileName} v${pkg.version}
-       * Released under the ${pkg.license} license.
+       * author: ${ pkg.author }
+       * ${ fileName } v${ pkg.version }
+       * Released under the ${ pkg.license } license.
        */
     `,
     sourcemap: false
@@ -41,11 +43,7 @@ const rollupConfig: RollupOptions = {
     ...['path', 'url', 'os', 'stream']
   ],
   plugins: [
-    getBabelOutputPlugin({
-      presets: [
-        getPresetsEnv(false)
-      ]
-    }),
+    getBabelOutputPlugin(),
     nodeResolve(),
     json(),
     ts({
@@ -53,10 +51,6 @@ const rollupConfig: RollupOptions = {
         module: 'esnext'
       }
     })
-    // Warning: Use --bundleConfigAsCjs instead of commonjs
-    // commonjs({
-    //   extensions: ['.js', '.ts']
-    // })
   ]
 }
 

@@ -9,7 +9,6 @@
     // "noEmit": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
-    "suppressImplicitAnyIndexErrors": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -18,7 +17,8 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "lib": ["dom", "esnext"],
-    "types": ["puppeteer", "node"],
+    "types": ["node"],
+    "typeRoots": ["puppeteer", "./node_modules/@types"],
     "paths": {
       "@/*": [
         "src/*"
@@ -28,5 +28,8 @@
   "exclude": [
     "dist",
     "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
   ]
 }

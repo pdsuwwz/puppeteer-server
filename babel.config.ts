@@ -2,11 +2,16 @@
  * Configuration for development environment only
  */
 
-const { getPresetsEnv } = require('./babel.presets')
+export default {
 
-module.exports = {
   presets: [
-    getPresetsEnv(),
+    '@babel/preset-env', {
+      targets: {
+        node: 'current'
+      },
+      // https://github.com/babel/babel/issues/10374#issuecomment-597029696
+      modules: 'auto'
+    },
     '@babel/preset-typescript'
   ],
   plugins: [

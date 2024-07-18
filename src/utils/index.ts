@@ -1,7 +1,6 @@
 import { networkInterfaces } from 'os'
 
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getLocalAddress (): any {
   const nets = networkInterfaces()
   const results = Object.create(null) // Or just '{}', an empty object

@@ -12,12 +12,10 @@ const router = new Router()
 
 // routes
 routes.forEach((route) => {
-  const params = [
-    route.path,
-    route.action
-  ]
-  router[route.method](...params)
+  const method = router[route.method]
+  method.call(router, route.path, route.action)
 })
+
 
 app.use(Cors())
 app.use(bodyParser())
@@ -45,14 +43,14 @@ app.listen(PORT, () => {
     blank2,
     '> Local:  ',
     '\x1b[36m',
-    `http://localhost:${PORT}/`,
+    `http://localhost:${ PORT }/`,
     '\x1b[0m'
   )
   console.log(
     blank2,
     '> Network:',
     '\x1b[36m',
-    `http://${localhost}:${PORT}/\n`,
+    `http://${ localhost }:${ PORT }/\n`,
     '\x1b[0m'
   )
 })

@@ -1,4 +1,4 @@
-import type { Request, Context } from 'koa'
+import type { Context, Request } from 'koa'
 import type { RequestBody } from '@/controllers/generate-pdf'
 
 import GeneratePdfService from '@/services/generate-pdf'
