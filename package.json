@@ -61,7 +61,7 @@
     "@typescript-eslint/parser": "^7.16.1",
     "axios": "^1.7.2",
     "babel-plugin-module-resolver": "^5.0.0",
-    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-cli": "^5.0.0",
     "eslint": "^9.7.0",
     "eslint-define-config": "^2.1.0",
     "esno": "^4.7.0",
