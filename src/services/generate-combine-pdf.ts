@@ -1,6 +1,8 @@
-import {
-  PDFDocument,
+import type {
   PDFPage
+} from 'pdf-lib'
+import {
+  PDFDocument
 } from 'pdf-lib'
 
 /**

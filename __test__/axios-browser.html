@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Puppeteer Test Server</title>
+  <style>
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    .code-box {
+      border: 1px solid red;
+    }
+    .code-inline {
+      code {
+        background-color: #eee;
+        border-radius: 5px;
+        padding: 3px 7px;
+      }
+    }
+  </style>
 </head>
 <body>
   <code>
@@ -25,17 +43,24 @@
     ]
   </code>
   <h2>正在爬取👆网站并完成合并pdf的过程，请等待几秒钟，浏览器将自动打开下载窗口</h2>
-  <h2>Please wait a few seconds for your browser to automatically open the download window</h2>
+  <h2>Please wait a few seconds while we crawl the above websites and complete the PDF merge process. The browser will automatically open the download window.</h2>
+  <div id="error-box" class="code-box code-inline hide"></div>
   
-  <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.1.2/axios.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.7.2/axios.js"></script>
   <script>
+    const PORT = 5000
+    // const PORT = 8080
     const service = axios.create({
-      baseURL: 'http://localhost:5000',
+      baseURL: `http://localhost:${PORT}`,
       timeout: 60000
     });
     const pdfList = [
       {
         url: 'https://github.com/pdsuwwz',
+        attachment: {
+          header: '自定义的页眉',
+          footer: '自定义的页脚'
+        },
       },
       {
         url: 'https://vuejs.org/api/',
@@ -65,8 +90,8 @@
         // 展示自定义页眉页脚，前提是需要将 hasMargin 设置为 true
         // Display the custom header and footer, provided that hasMargin is set to true
         attachment: {
-          header: 'ABC股份有限公司2020年度财务舞弊识别报告 — 实施阶段',
-          footer: 'BJ202107260001-AFCJ-01'
+          header: '这是页眉-ABC股份有限公司xxxx年度xxxx报告 — xx阶段',
+          footer: '这是页脚-BJxxxx07260001-AFCJ-01'
         },
         // 生成出来的 PDF 是否为横向
         // Whether the generated PDF is horizontal
@@ -94,6 +119,16 @@
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
+    }).catch((err) => {
+      const errBox = document.querySelector('#error-box')
+
+      errBox.innerHTML = `
+        <p>Node.js 服务报错或未运行，请运行 <code>pnpm start</code> 或 <code>node dist/bundle.esm.js</code> 或 <code>node __test__/axios-node.js</code> 后再试，或请检查服务运行情况。</p>
+        <p>Node.js service encountered an error or is not running. Please run <code>pnpm start</code> or <code>node dist/bundle.esm.js</code> or <code>node __test__/axios-node.js</code> check the service status and try again .</p>
+      `
+
+      errBox.classList.add('show')
+      console.log(err)
     })
   </script>
 </body>

@@ -1,4 +1,4 @@
-import type { Request, Context } from 'koa'
+import type { Context, Request } from 'koa'
 import GeneratePdfService from '@/services/generate-pdf'
 
 export type Cookies = {
@@ -15,7 +15,7 @@ export type Attachment = {
 /**
  * 生成 PDF 的请求参数
  */
-export interface RequestBody extends Record<string, unknown>{
+export interface RequestBody extends Record<string, unknown> {
   /**
    * 目标网站
    *

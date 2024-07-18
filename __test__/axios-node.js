@@ -1,23 +1,23 @@
-const axios = require('axios')
-const fs = require('fs')
+import axios from 'axios'
+import fs from 'fs'
+
+const PORT = 5000
+// const PORT = 8080
 
 const service = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: `http://localhost:${ PORT }`
 })
 
 
-service({
-  method: 'post',
-  url: '/combine-pdf',
-  responseType: 'arraybuffer',
-  data: {
+const init = () => {
+  service.post('/combine-pdf', {
     pdfList: [
       {
-        url: 'https://www.google.com/',
+        url: 'https://www.baidu.com/',
         isLandscape: true,
         attachment: {
           header: 'Header 自定义页眉',
-          footer: 'Footer 自定义页脚',
+          footer: 'Footer 自定义页脚'
         }
       },
       {
@@ -33,7 +33,13 @@ service({
         ]
       }
     ]
-  }
-}).then((res) => {
-  fs.writeFileSync('combime-test1.pdf', res.data)
-})
+  }, {
+    responseType: 'arraybuffer'
+  }).then((res) => {
+    fs.writeFileSync('combime-test1.pdf', res.data)
+  }).catch((err) => {
+    console.log(err)
+  })
+}
+
+init()

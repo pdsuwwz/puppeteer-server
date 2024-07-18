@@ -13,7 +13,7 @@ Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwr
 
 ## 介绍
 
-🦩 Koa + TypeScript + Rollup + Nodemon + Puppeteer
+🦩 Koa + ESM + TypeScript + Rollup + Nodemon + Puppeteer + ESLint (v9)
 
 > * 能够将任意网页快速生成为 PDF、图片。
 >
@@ -21,13 +21,15 @@ Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwr
 
 ## ✨ 特性
 
+* ✅ 自带 TypeScript + ES Module 环境
+
 * 🌈 解耦了业务层和控制层
 
 * 🛡 可能是 Puppeteer 项目的最佳实践
 
 * 🧩 可配置的路由
 
-* 🚧 内置 Eslint 语法风格检查
+* 🚧 内置 Eslint (v9) 语法风格检查
 
 * ⚡ 使用 Rollup 快速构建
 
@@ -50,7 +52,7 @@ Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwr
 
 ## 🎯 前序准备
 
-请确保安装了 [Node.js](https://nodejs.org/)(>= 10.18.1)
+请确保安装了 [Node.js](https://nodejs.org/)(>= 20.x)
 
 
 ## 项目结构
@@ -93,7 +95,9 @@ pnpm build
 * 运行
 
 ```bash
-pnpm start
+pnpm start # 端口号为 8080
+# 或直接运行
+node dist/bundle.esm.js # 端口号为 5000
 ```
 
 ## 核心接口

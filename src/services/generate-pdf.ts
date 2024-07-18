@@ -119,6 +119,13 @@ export default class GeneratePdfService {
         : watermarkImageFullVertical
     }
 
+    // 解决报错：ReferenceError: __name is not defined
+    // Ref: https://github.com/evanw/esbuild/issues/1031
+    // Ref: https://github.com/evanw/esbuild/issues/1031
+    await page.evaluate(() => {
+      (window as any).__name = (func: any) => func
+    })
+
     // Get the "viewport" of the page, as reported by the page.
     await page.evaluate(async ({ watermarkImage, hiddenWatermark }) => {
       if (hiddenWatermark) return {}
@@ -134,7 +141,7 @@ export default class GeneratePdfService {
       }
       // Watermark Image
       // const src = 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b'
-      const src = `data:image/png;base64,${watermarkImage}`
+      const src = `data:image/png;base64,${ watermarkImage }`
 
       const image = document.createElement('img')
       image.style.cssText = `
@@ -182,13 +189,13 @@ export default class GeneratePdfService {
         .pptr-server-attachment__logo {
           position: relative;
           height: 21px;
-          content: url("data:image/png;base64,${attachmentImage}");
+          content: url("data:image/png;base64,${ attachmentImage }");
         }
       </style>
     `
 
     const headerTemplate = `
-    ${pptrStyleTag}
+    ${ pptrStyleTag }
     <div
     style="
       width: 100%;
@@ -203,14 +210,14 @@ export default class GeneratePdfService {
       align-items: center;
       justify-content: space-between;
     ">
-      <div>${attachment.header}</div>
+      <div>${ attachment.header }</div>
       <div style="display: flex; align-items: center;">
         <span class="pptr-server-attachment__logo"></span>
       </div>
     </div>`
 
     const footerTemplate = `
-    ${pptrStyleTag}
+    ${ pptrStyleTag }
     <div
     style="
       width: 100%;
@@ -225,7 +232,7 @@ export default class GeneratePdfService {
       align-items: center;
       justify-content: space-between;
     ">
-      <div>${attachment.footer}</div>
+      <div>${ attachment.footer }</div>
       <div style="display: flex; align-items: center;">
         <!-- <span class="pptr-server-attachment__logo"></span>  -->
         <!-- <span>Page number for footer：</span> -->
