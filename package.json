@@ -37,7 +37,7 @@
     "pdf-lib": "^1.17.1"
   },
   "peerDependencies": {
-    "puppeteer": "^22.13.1"
+    "puppeteer": "^23.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
