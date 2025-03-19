@@ -1,7 +1,7 @@
-import { networkInterfaces } from 'os'
+import { networkInterfaces } from 'node:os'
 
 
-export function getLocalAddress (): any {
+export function getLocalAddress(): any {
   const nets = networkInterfaces()
   const results = Object.create(null) // Or just '{}', an empty object
 

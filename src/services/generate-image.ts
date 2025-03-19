@@ -15,7 +15,7 @@ export default class GenerateImageService {
     if (!ctx.query.url) {
       ctx.status = 404
       return {
-        status: 'NOT-FOUND'
+        status: 'NOT-FOUND',
       }
     }
 
@@ -24,20 +24,20 @@ export default class GenerateImageService {
         '--disable-extensions',
         '--no-sandbox',
         '--disable-setuid-sandbox',
-        '--disable-web-security'
-      ]
+        '--disable-web-security',
+      ],
     })
 
     const page = await browser.newPage()
 
     await page.goto(ctx.query.url as string, {
-      waitUntil: 'networkidle2'
+      waitUntil: 'networkidle2',
     })
 
     return await page.screenshot({
       omitBackground: true,
       fullPage: true,
-      type: 'png'
+      type: 'png',
     })
   }
 }

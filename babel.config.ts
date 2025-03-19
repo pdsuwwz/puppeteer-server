@@ -7,21 +7,21 @@ export default {
   presets: [
     '@babel/preset-env', {
       targets: {
-        node: 'current'
+        node: 'current',
       },
       // https://github.com/babel/babel/issues/10374#issuecomment-597029696
-      modules: 'auto'
+      modules: 'auto',
     },
-    '@babel/preset-typescript'
+    '@babel/preset-typescript',
   ],
   plugins: [
     [
       'module-resolver',
       {
         alias: {
-          '@': './src'
-        }
-      }
-    ]
-  ]
+          '@': './src',
+        },
+      },
+    ],
+  ],
 }
