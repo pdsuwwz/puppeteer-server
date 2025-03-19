@@ -13,7 +13,7 @@ Playwright repo: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwrig
 
 ## Introduction
 
-🦩 Koa + ESM + TypeScript + Rollup + Nodemon + Puppeteer + ESLint (v9)
+🦩 Koa + ESM + TypeScript + Tsup + Nodemon + Puppeteer + ESLint (v9)
 
 > * Fast Generate into PDF and images from any webpage.
 >
@@ -32,7 +32,7 @@ Playwright repo: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwrig
 
 * 🚧 Eslint (v9) configuration.
 
-* ⚡ Fast build with Rollup.
+* ⚡ Fast build with ~~Rollup~~ Tsup.
 
 * 🔌 Extensible PDF watermark, header and footer.
 
