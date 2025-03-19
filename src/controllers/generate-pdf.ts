@@ -71,14 +71,14 @@ class GeneratePdfController {
     const {
       url,
       cookies,
-      hasMargin
+      hasMargin,
     } = ctx.request.body
 
 
     if (!url) {
       ctx.status = 404
       ctx.body = {
-        status: 'NOT-FOUND'
+        status: 'NOT-FOUND',
       }
       return
     }
@@ -87,7 +87,7 @@ class GeneratePdfController {
     const pdf = await this.service.generate({
       url,
       cookies,
-      hasMargin
+      hasMargin,
     })
 
     if (Object.prototype.toString.call(pdf) === '[object Uint8Array]') {

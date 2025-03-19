@@ -1,35 +1,35 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "node",
-    "declaration": false,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noImplicitAny": true,
-    // "noEmit": true,
-    "isolatedModules": true,
-    "allowSyntheticDefaultImports": true,
-    "removeComments": true,
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "esnext",
-    "sourceMap": false,
-    "outDir": "./dist",
     "baseUrl": "./",
-    "lib": ["dom", "esnext"],
-    "types": ["node"],
-    "typeRoots": ["puppeteer", "./node_modules/@types"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "paths": {
       "@/*": [
         "src/*"
       ]
     },
+    "resolveJsonModule": true,
+    "typeRoots": ["puppeteer", "./node_modules/@types"],
+    "types": ["node"],
+    "noImplicitAny": true,
+    "declaration": false,
+    "outDir": "./dist",
+    "removeComments": true,
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    // "noEmit": true,
+    "isolatedModules": true
   },
+  "include": [
+    "**/*.ts"
+  ],
   "exclude": [
     "dist",
     "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
   ]
 }

@@ -1,55 +1,56 @@
-import puppeteer, { type PDFOptions } from 'puppeteer'
-import fs from 'fs'
-import path from 'path'
-
 import type { RequestBody } from '@/controllers/generate-pdf'
+import type { PDFOptions } from 'puppeteer'
+import fs from 'node:fs'
+
+import path from 'node:path'
+import puppeteer from 'puppeteer'
 
 const attachmentImage = fs.readFileSync(
   path.resolve(
     process.cwd(),
-    'static/google-logo.png'
+    'static/google-logo.png',
   ),
   {
-    encoding: 'base64'
-  }
+    encoding: 'base64',
+  },
 )
 
 const watermarkImageVertical = fs.readFileSync(
   path.resolve(
     process.cwd(),
-    'static/cover-watermark.png'
+    'static/cover-watermark.png',
   ),
   {
-    encoding: 'base64'
-  }
+    encoding: 'base64',
+  },
 )
 const watermarkImageFullVertical = fs.readFileSync(
   path.resolve(
     process.cwd(),
-    'static/cover-watermark-full.png'
+    'static/cover-watermark-full.png',
   ),
   {
-    encoding: 'base64'
-  }
+    encoding: 'base64',
+  },
 )
 
 const watermarkImageLandscape = fs.readFileSync(
   path.resolve(
     process.cwd(),
-    'static/cover-watermark-landscape.png'
+    'static/cover-watermark-landscape.png',
   ),
   {
-    encoding: 'base64'
-  }
+    encoding: 'base64',
+  },
 )
 const watermarkImageFullLandscape = fs.readFileSync(
   path.resolve(
     process.cwd(),
-    'static/cover-watermark-full-landscape.png'
+    'static/cover-watermark-full-landscape.png',
   ),
   {
-    encoding: 'base64'
-  }
+    encoding: 'base64',
+  },
 )
 
 /**
@@ -71,13 +72,13 @@ export default class GeneratePdfService {
       cookies = [],
       hasMargin = true,
       isLandscape = false,
-      hiddenWatermark = false
+      hiddenWatermark = false,
     } = params
 
     let { attachment } = params
     attachment = Object.assign({
       header: '',
-      footer: ''
+      footer: '',
     }, {}, attachment)
 
 
@@ -89,8 +90,8 @@ export default class GeneratePdfService {
         '--disable-extensions',
         '--no-sandbox',
         '--disable-setuid-sandbox',
-        '--disable-web-security'
-      ]
+        '--disable-web-security',
+      ],
     })
 
 
@@ -105,7 +106,7 @@ export default class GeneratePdfService {
     await page.setCookie(...cookies)
 
     await page.goto(encodeURI(url), {
-      waitUntil: 'networkidle2'
+      waitUntil: 'networkidle2',
     })
 
     let waterImage = ''
@@ -128,7 +129,9 @@ export default class GeneratePdfService {
 
     // Get the "viewport" of the page, as reported by the page.
     await page.evaluate(async ({ watermarkImage, hiddenWatermark }) => {
-      if (hiddenWatermark) return {}
+      if (hiddenWatermark) {
+        return {}
+      }
 
       const waitImage = (src: string) => {
         return new Promise((resolve) => {
@@ -141,7 +144,7 @@ export default class GeneratePdfService {
       }
       // Watermark Image
       // const src = 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b'
-      const src = `data:image/png;base64,${ watermarkImage }`
+      const src = `data:image/png;base64,${watermarkImage}`
 
       const image = document.createElement('img')
       image.style.cssText = `
@@ -168,7 +171,7 @@ export default class GeneratePdfService {
       }
     }, {
       watermarkImage: waterImage,
-      hiddenWatermark
+      hiddenWatermark,
     })
 
     // Css for print mode
@@ -181,7 +184,7 @@ export default class GeneratePdfService {
             }
           */
         }
-      `
+      `,
     })
 
     const pptrStyleTag = `
@@ -189,13 +192,13 @@ export default class GeneratePdfService {
         .pptr-server-attachment__logo {
           position: relative;
           height: 21px;
-          content: url("data:image/png;base64,${ attachmentImage }");
+          content: url("data:image/png;base64,${attachmentImage}");
         }
       </style>
     `
 
     const headerTemplate = `
-    ${ pptrStyleTag }
+    ${pptrStyleTag}
     <div
     style="
       width: 100%;
@@ -210,14 +213,14 @@ export default class GeneratePdfService {
       align-items: center;
       justify-content: space-between;
     ">
-      <div>${ attachment.header }</div>
+      <div>${attachment.header}</div>
       <div style="display: flex; align-items: center;">
         <span class="pptr-server-attachment__logo"></span>
       </div>
     </div>`
 
     const footerTemplate = `
-    ${ pptrStyleTag }
+    ${pptrStyleTag}
     <div
     style="
       width: 100%;
@@ -232,7 +235,7 @@ export default class GeneratePdfService {
       align-items: center;
       justify-content: space-between;
     ">
-      <div>${ attachment.footer }</div>
+      <div>${attachment.footer}</div>
       <div style="display: flex; align-items: center;">
         <!-- <span class="pptr-server-attachment__logo"></span>  -->
         <!-- <span>Page number for footer：</span> -->
@@ -251,7 +254,7 @@ export default class GeneratePdfService {
         top: 70,
         left: 81,
         right: 81,
-        bottom: 70
+        bottom: 70,
       }
     }
 
@@ -259,7 +262,7 @@ export default class GeneratePdfService {
       format: 'a4',
       landscape: isLandscape,
       printBackground: true,
-      ...extraProps
+      ...extraProps,
     })
     page.close()
     return buffer

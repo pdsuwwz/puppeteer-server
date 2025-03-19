@@ -1,8 +1,8 @@
-import type { Context, Request } from 'koa'
 import type { RequestBody } from '@/controllers/generate-pdf'
+import type { Context, Request } from 'koa'
 
-import GeneratePdfService from '@/services/generate-pdf'
 import GenerateCombinePdfService from '@/services/generate-combine-pdf'
+import GeneratePdfService from '@/services/generate-pdf'
 
 interface RequestCombinePDF extends Request {
   body: {
@@ -29,7 +29,7 @@ class GenerateCombinePdfController {
     if (!pdfList.length) {
       ctx.status = 404
       ctx.body = {
-        status: 'NOT-FOUND'
+        status: 'NOT-FOUND',
       }
       return
     }
@@ -40,7 +40,7 @@ class GenerateCombinePdfController {
     })
 
     const totalPdf = await this.service.generate(
-      ...pdfPromises
+      ...pdfPromises,
     )
 
     if (Object.prototype.toString.call(totalPdf) === '[object Uint8Array]') {

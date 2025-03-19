@@ -1,8 +1,8 @@
 import type {
-  PDFPage
+  PDFPage,
 } from 'pdf-lib'
 import {
-  PDFDocument
+  PDFDocument,
 } from 'pdf-lib'
 
 /**

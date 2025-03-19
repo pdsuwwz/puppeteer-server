@@ -49,7 +49,6 @@ Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwr
 ![image](https://user-images.githubusercontent.com/19891724/159743021-e1f9f528-d6d9-4d6b-b63f-4e71c6b72bdb.png)
 
 
-
 ## 🎯 前序准备
 
 请确保安装了 [Node.js](https://nodejs.org/)(>= 20.x)
@@ -185,4 +184,3 @@ const routes: Array<RouteConfig> = [
 
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpdsuwwz%2Fpuppeteer-server?ref=badge_large)
-
