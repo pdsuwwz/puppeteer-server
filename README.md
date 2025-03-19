@@ -13,7 +13,7 @@ Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwr
 
 ## 介绍
 
-🦩 Koa + ESM + TypeScript + Rollup + Nodemon + Puppeteer + ESLint (v9)
+🦩 Koa + ESM + TypeScript + Tsup + Nodemon + Puppeteer + ESLint (v9)
 
 > * 能够将任意网页快速生成为 PDF、图片。
 >
@@ -31,7 +31,7 @@ Playwright 仓库: [koa-playwright-server](https://github.com/pdsuwwz/koa-playwr
 
 * 🚧 内置 Eslint (v9) 语法风格检查
 
-* ⚡ 使用 Rollup 快速构建
+* ⚡ 使用 ~~Rollup~~ Tsup 快速构建
 
 * 🔌 内置了 PDF 水印、页眉和页脚，可自行修改及扩展
 
